@@ -10,6 +10,9 @@ Welcome to SeMPI's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   chapters/primer
+   chapters/genome_input
+   chapters/prediction_algo
 
 
 Indices and tables
