@@ -1,0 +1,142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Database screening &#8212; SeMPI 2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Updates" href="update_log.html" />
+    <link rel="prev" title="Genome browser" href="genome_browser.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="update_log.html" title="Updates"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="genome_browser.html" title="Genome browser"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="database-screening">
+<h1>Database screening<a class="headerlink" href="#database-screening" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="use-cases">
+<h2>Use cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
+<p>The database (DB) screening allows users:</p>
+<ol class="arabic simple">
+<li>to estimate the novelty of their gene clusters (a scaffold which does not match similar scaffolds in known databases, is very likely a novel cluster)</li>
+<li>the identification of possible post-modifications, which cannot be detected by prediction algorithms yet</li>
+<li>the identification of similar clusters (based on the product)</li>
+<li>the matching of custom defined molecules in a genome (using the scaffold upload tool)</li>
+</ol>
+</div>
+<div class="section" id="algorithm">
+<h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h2>
+<p>The database screening uses a two step approach to identify similar compounds from public DBs.</p>
+</div>
+<div class="section" id="fingerprint-screening">
+<h2>Fingerprint screening<a class="headerlink" href="#fingerprint-screening" title="Permalink to this headline">¶</a></h2>
+<p>First, it screens the selected DBs using molecular fingerprints (FP). For the screening the rdkit implementation
+of Morgan FPs (Circular FPs) were chosen (<a class="reference external" href="https://www.rdkit.org/docs/GettingStartedInPython.html#fingerprinting-and-molecular-similarity">Morgan Fingerprints</a>).</p>
+<p>In detail a Morgan FB with radius 3 and features is implemented.</p>
+<p>The scaffolds of PKS and NRPS often contain multiple times the same building blocks. This property can not
+be accurately represented by bit fingerprints. Multiple identical building block set the same bits (and
+bits are only set ones), which lead to similar fingerprints for scaffolds with different amounts of identical fingerprints.
+Therefore, the FPs are implemented as count vectors, which distinguish molecules also based on the amount of present
+bits.</p>
+<p>For count vectors the similarity is calculated using dice similarity instead of the well-known Tanimoto coefficient.</p>
+<p>When multiple scaffolds are submitted a joint FP is computed for all scaffolds.
+This allows SeMPI to match correct scaffolds also of clusters where only fragments could be predicted.</p>
+<p>The FP screening only creates a pre-selection of possible scaffold matches.
+This is limited to a certain amount of selections (default: 50), due to the
+long computation time of the follow-up maximum common substructure screening</p>
+</div>
+<div class="section" id="maximum-common-substructure-screening">
+<h2>Maximum Common Substructure Screening<a class="headerlink" href="#maximum-common-substructure-screening" title="Permalink to this headline">¶</a></h2>
+<p>Even though the FP screening collects very close matches to the predicted scaffolds,
+some properties cannot be matches accurately with FPs.</p>
+<p>For example: The order of building blocks cannot be accurately represented even by count vectors.</p>
+<p>Therefore an additional screening is applied to the pre-selected molecules.</p>
+<p>The maximum common substructure (MCS) screening maximizes the MCS for each scaffold fragment with the target
+molecules.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="genome_browser.html"
+                        title="previous chapter">Genome browser</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="update_log.html"
+                        title="next chapter">Updates</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="update_log.html" title="Updates"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="genome_browser.html" title="Genome browser"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Paul Zierep.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+    </div>
+  </body>
+</html>

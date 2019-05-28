@@ -13,6 +13,9 @@ Welcome to SeMPI's documentation!
    chapters/primer
    chapters/genome_input
    chapters/prediction_algo
+   chapters/genome_browser
+   chapters/database_screening
+   chapters/update_log
 
 
 Indices and tables

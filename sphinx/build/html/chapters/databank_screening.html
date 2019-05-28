@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Genome input &#8212; SeMPI 2.0 documentation</title>
+    <title>Database screening &#8212; SeMPI 2.0 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,9 +23,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Prediction" href="prediction_algo.html" />
-    <link rel="prev" title="Primer" href="primer.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
   </head>
   <body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -34,12 +32,6 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="prediction_algo.html" title="Prediction"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="primer.html" title="Primer"
-             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li> 
       </ul>
     </div>  
@@ -49,26 +41,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="genome-input">
-<h1>Genome input<a class="headerlink" href="#genome-input" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="input-form">
-<h2>Input form<a class="headerlink" href="#input-form" title="Permalink to this headline">¶</a></h2>
-<div class="figure">
-<a class="reference internal image-reference" href="../_images/input_form_01.svg"><img alt="input" src="../_images/input_form_01.svg" /></a>
-</div>
-</div>
-<div class="section" id="input-format">
-<h2>Input format<a class="headerlink" href="#input-format" title="Permalink to this headline">¶</a></h2>
-<p>SeMPI can work with genome data in FASTA or GenBank format.
-An example file for both formats can be download from the start page.</p>
-</div>
-<div class="section" id="further-processing">
-<h2>Further processing<a class="headerlink" href="#further-processing" title="Permalink to this headline">¶</a></h2>
-<div class="figure" id="id1">
-<a class="reference internal image-reference" href="../_images/input.svg"><img alt="input" src="../_images/input.svg" /></a>
-<p class="caption"><span class="caption-text">If only DNA data is provided, the genes are predicted using prodigal. If the genes are already assigned (GenBank) SeMPI will try to parse the genes and use them for further analysis. SeMPI can parse multiple records per file, it will create one output for each record.</span></p>
-</div>
-</div>
+  <div class="section" id="database-screening">
+<h1>Database screening<a class="headerlink" href="#database-screening" title="Permalink to this headline">¶</a></h1>
+<p>The database screening allows users:
+(1) to estimate the novelty of their gene clusters (a scaffold which does not match similar
+scaffolds in known databases)
+(2) the identification of possible post-modifications, which cannot be detected by prediction algorithms yet
+(3) the identification of similar clusters (based on the product)
+(4) the matching of custom defined molecules in a genome (using the scaffold upload tool)</p>
 </div>
 
 
@@ -77,12 +57,6 @@ An example file for both formats can be download from the start page.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="primer.html"
-                        title="previous chapter">Primer</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="prediction_algo.html"
-                        title="next chapter">Prediction</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -103,12 +77,6 @@ An example file for both formats can be download from the start page.</p>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="prediction_algo.html" title="Prediction"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="primer.html" title="Primer"
-             >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li> 
       </ul>
     </div>

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Genome input &#8212; SeMPI 2.0 documentation</title>
+    <title>Genome browser &#8212; SeMPI 2.0 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Prediction" href="prediction_algo.html" />
-    <link rel="prev" title="Primer" href="primer.html" /> 
+    <link rel="next" title="Updates" href="update_log.html" />
+    <link rel="prev" title="Prediction" href="prediction_algo.html" /> 
   </head>
   <body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,10 +35,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="prediction_algo.html" title="Prediction"
+          <a href="update_log.html" title="Updates"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="primer.html" title="Primer"
+          <a href="prediction_algo.html" title="Prediction"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li> 
       </ul>
@@ -49,25 +49,37 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="genome-input">
-<h1>Genome input<a class="headerlink" href="#genome-input" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="input-form">
-<h2>Input form<a class="headerlink" href="#input-form" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="genome-browser">
+<h1>Genome browser<a class="headerlink" href="#genome-browser" title="Permalink to this headline">¶</a></h1>
+<p>In order to allow a graphical view of the genome and the clusters a genome browser is incorporated into SeMPI. The browser visualizes the genes (CSD), biosynthetic gene cluster (BGC) relevant domains, modules, blocks and clusters together in a simple to user browser. For a detailed explanation please see the <a class="reference external" href="http://d3gb.usal.es/help/index.html">D3 Genome Browser D3GB</a>
+help page.</p>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <div class="figure">
-<a class="reference internal image-reference" href="../_images/input_form_01.svg"><img alt="input" src="../_images/input_form_01.svg" /></a>
+<a class="reference internal image-reference" href="../_images/genome_browser_01.svg"><img alt="genome_browser_01" src="../_images/genome_browser_01.svg" /></a>
 </div>
+<ol class="arabic simple">
+<li>The genome browser is available for the entire analyzed genome.</li>
+<li>But the browser can also be limited to the predicted cluster  (2) (and 10000bp of its surrounding).</li>
+</ol>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/genome_browser_02.svg"><img alt="genome_browser_02" src="../_images/genome_browser_02.svg" /></a>
 </div>
-<div class="section" id="input-format">
-<h2>Input format<a class="headerlink" href="#input-format" title="Permalink to this headline">¶</a></h2>
-<p>SeMPI can work with genome data in FASTA or GenBank format.
-An example file for both formats can be download from the start page.</p>
+<p>When directed to the genome browser, the entire genome is shown as a bar.</p>
+<ol class="arabic simple">
+<li>The initial area to display can be selected.</li>
+<li>The “Go to” button directs you to the detail view.</li>
+</ol>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/genome_browser_03.svg"><img alt="genome_browser_03" src="../_images/genome_browser_03.svg" /></a>
 </div>
-<div class="section" id="further-processing">
-<h2>Further processing<a class="headerlink" href="#further-processing" title="Permalink to this headline">¶</a></h2>
-<div class="figure" id="id1">
-<a class="reference internal image-reference" href="../_images/input.svg"><img alt="input" src="../_images/input.svg" /></a>
-<p class="caption"><span class="caption-text">If only DNA data is provided, the genes are predicted using prodigal. If the genes are already assigned (GenBank) SeMPI will try to parse the genes and use them for further analysis. SeMPI can parse multiple records per file, it will create one output for each record.</span></p>
-</div>
+<ol class="arabic simple">
+<li>The browser visualizes the genes (CDS), biosynthetic gene cluster (BGC) relevant domains, modules, blocks and clusters.</li>
+<li>The figure can be exported in multiple formats.</li>
+<li>The area of display can be expanded/changed and contracted using the top panel.</li>
+<li>By clicking on the side panel text, the block can be collapsed, which is useful when too many genes/domains are shown (if the entire genome is shown thousands of genes might be displayed).</li>
+<li>By clicking on the field of interest additional informations are displayed.</li>
+</ol>
 </div>
 </div>
 
@@ -78,11 +90,11 @@ An example file for both formats can be download from the start page.</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="primer.html"
-                        title="previous chapter">Primer</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="prediction_algo.html"
-                        title="next chapter">Prediction</a></p>
+                        title="previous chapter">Prediction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="update_log.html"
+                        title="next chapter">Updates</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -104,10 +116,10 @@ An example file for both formats can be download from the start page.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="prediction_algo.html" title="Prediction"
+          <a href="update_log.html" title="Updates"
              >next</a> |</li>
         <li class="right" >
-          <a href="primer.html" title="Primer"
+          <a href="prediction_algo.html" title="Prediction"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li> 
       </ul>
