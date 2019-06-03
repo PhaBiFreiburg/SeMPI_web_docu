@@ -10,5 +10,11 @@ SeMPI 2 provides a prediction pipeline for PKS (type I) and NRPS biosynthetic ge
 Help on website
 ===============
 
-We try to make SeMPI as user friendly as possible for such a complex pipeline. Therefore, we assign components which are not absolutely self-explanatory with an  question mark. If you think some components are not clearly explained or need more information, please contact us and we will take care for it.
+We try to make SeMPI as user friendly as possible for such a complex pipeline. Therefore, we assign components which are not absolutely self-explanatory with an  question mark. Which upon hovering, displays additional information.
+
+.. figure:: img/help.png
+   :scale: 50 %
+   :alt: prediction
+
+If you think some components are not clearly explained or need more information, please contact us and we will take care of it.
 

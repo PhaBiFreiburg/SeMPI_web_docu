@@ -14,6 +14,10 @@ The database (DB) screening allows users:
 Algorithm
 =========
 
+.. figure:: img/scaffold_screening.svg
+   :scale: 50 %
+   :alt: scaffold_screening
+
 The database screening uses a two step approach to identify similar compounds from public DBs.
 
 Fingerprint screening

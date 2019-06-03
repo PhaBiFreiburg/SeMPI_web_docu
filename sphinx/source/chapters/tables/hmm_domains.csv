@@ -1,0 +1,11 @@
+acyl carrier protein / peptidyl carrier proteins,ACP/PCP,"ACP and PCP are detected using the same profile, but are subsequently assigned depending on the module where they occure."
+Acetyltransferase,AT,
+Keto-synthase,KS,
+Dehydratase,DH,
+Enoylreductase,ER,
+Ketoreductase,KR,
+Methyltransferase,MT,
+Thioesterase,TE,
+Condensation domain,C,
+Epimerization domain,E,"This domain is detected with the same pHMM as the condensation domain, but subsequently changed when positioned behind another condensation domain."
+Adenylation domain,A,
