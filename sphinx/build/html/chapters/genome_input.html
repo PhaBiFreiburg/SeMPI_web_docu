@@ -61,8 +61,13 @@
 <li>Its easy to get confused, when multiple files are submitted to the server, therefore the jobs can be commented, which allows simple identification when the jobs are done. An example could be “interesting genome Number 3”. This field is optional.</li>
 <li>The threshold which defines the maximum distance between functional modules allowing them to be part of the same cluster.</li>
 <li>If modules are detected, which lack a functional AT domain, they might be modules using a so called trans-AT (<a class="reference external" href="https://pubs.rsc.org/en/content/articlelanding/2016/np/c5np00125k#!divAbstract">https://pubs.rsc.org/en/content/articlelanding/2016/np/c5np00125k#!divAbstract</a>). In SeMPI 2 their module specificity is set to undefined, but they are still used in the cluster creation process. If the box is unchecked, these modules are set to “not functional”.</li>
-<li>test</li>
+<li>Force the gene prediction algorithm. Independent of the input, the genes will be predicted using prodigal, based on the provided DNA. Otherwise the genes will only be predicted if they cannot be found in the input data. Pre-computed genes need to be assigned in a GeneBank file using the CDS tag (<a class="reference external" href="https://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html#CDSB">https://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html#CDSB</a>). As SeMPI 2.0 needs the stand side information of the gene (+ or -) for reasonable cluster predictions, files where the strand side is not assigned will automatically lead to a gene prediction.</li>
 </ol>
+<div class="figure">
+<img alt="input" src="../_images/cds_strand.svg" /></div>
+<p>(6) Force prodigal to use the meta (in new versions also called “Anonymous Mode”) option (predicting the genes based on an independent genome training dataset,
+<a class="reference external" href="https://github.com/hyattpd/Prodigal/wiki/Gene-Prediction-Modes#anonymous-mode">https://github.com/hyattpd/Prodigal/wiki/Gene-Prediction-Modes#anonymous-mode</a>). In the normal settings, the meta option is only used, if the provided DNA is too short for accurate self-training.
+(7) The screening algorithm uses fingerprints to detect similar compounds in the chosen data bases (DBs) (this gives already close matches). Of those matches the best N. compounds are used for a stricter screening process using most common substructures (MCS). The MCS algorithm can take a while to process, therefore it is reasonable to limit the number of compounds selected for this task (see also <a class="reference internal" href="database_screening.html#fp-screen"><span class="std std-ref">Fingerprint screening</span></a>).</p>
 </div>
 <div class="section" id="input-format">
 <h2>Input format<a class="headerlink" href="#input-format" title="Permalink to this headline">¶</a></h2>

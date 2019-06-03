@@ -20,6 +20,8 @@ Algorithm
 
 The database screening uses a two step approach to identify similar compounds from public DBs.
 
+.. _fp_screen:
+
 Fingerprint screening
 =====================
 
