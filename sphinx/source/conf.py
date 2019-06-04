@@ -30,9 +30,11 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.todo',
+extensions = [
+    'sphinx.ext.todo',
     'sphinx.ext.coverage',
-    'sphinx.ext.mathjax']
+    'sphinx.ext.mathjax'
+    ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -90,7 +92,7 @@ html_theme = 'nature'
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+# html_theme_options = {'body_max_width': '70%'}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -104,6 +106,8 @@ html_static_path = ['_static']
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
 html_sidebars = {
     '**': [
+        # b'localtoc.html',
+        'globaltoc.html',
         'relations.html',  # needs 'show_related': True theme option to display
         'searchbox.html',
     ]
@@ -167,4 +171,7 @@ texinfo_documents = [
 ]
 
 
+
+#Add figure numbering (PZ)
+numfig = True
 
