@@ -23,15 +23,6 @@ Search
 
 * :ref:`search`
 
-Technical documentation
-=======================
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Technical explanation of the pipeline
-
-   apidoc/modules
-
 Updates
 =======
 
