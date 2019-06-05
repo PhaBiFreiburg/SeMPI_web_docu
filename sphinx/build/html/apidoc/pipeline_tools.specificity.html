@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pipeline_tools.specificity package &#8212; SeMPI 2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Updates" href="../chapters/update_log.html" />
+    <link rel="prev" title="pipeline_tools.rdkit_utils package" href="pipeline_tools.rdkit_utils.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../chapters/update_log.html" title="Updates"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pipeline_tools.rdkit_utils.html" title="pipeline_tools.rdkit_utils package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >Module documentation of the pipeline</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="pipeline_tools.html" accesskey="U">pipeline_tools package</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pipeline-tools-specificity-package">
+<h1>pipeline_tools.specificity package<a class="headerlink" href="#pipeline-tools-specificity-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pipeline_tools.specificity.ml_utils">
+<span id="pipeline-tools-specificity-ml-utils-module"></span><h2>pipeline_tools.specificity.ml_utils module<a class="headerlink" href="#module-pipeline_tools.specificity.ml_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pipeline_tools.specificity.ml_utils.add_new_seq_df">
+<code class="descclassname">pipeline_tools.specificity.ml_utils.</code><code class="descname">add_new_seq_df</code><span class="sig-paren">(</span><em>records</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.ml_utils.add_new_seq_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.ml_utils.class_df2OneHotEncoder">
+<code class="descclassname">pipeline_tools.specificity.ml_utils.</code><code class="descname">class_df2OneHotEncoder</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.ml_utils.class_df2OneHotEncoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the alignment to a onehotencoded dataframe suitable for sklearn apllication</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.ml_utils.class_dict2df">
+<code class="descclassname">pipeline_tools.specificity.ml_utils.</code><code class="descname">class_dict2df</code><span class="sig-paren">(</span><em>class_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.ml_utils.class_dict2df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a pandas df from the class dict, alignment positions, class and seq_name as columns names</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.ml_utils.compute_prediction_count">
+<code class="descclassname">pipeline_tools.specificity.ml_utils.</code><code class="descname">compute_prediction_count</code><span class="sig-paren">(</span><em>proba_df</em>, <em>threshold=0.8</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.ml_utils.compute_prediction_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the % of correct predictions based on the proba_df
+and assigns a new target depending on the threshold</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.ml_utils.cross_val_repeated_eval">
+<code class="descclassname">pipeline_tools.specificity.ml_utils.</code><code class="descname">cross_val_repeated_eval</code><span class="sig-paren">(</span><em>data</em>, <em>target</em>, <em>cv_splits=5</em>, <em>repeat=10</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.ml_utils.cross_val_repeated_eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes a df which lists all cv steps, with prediction for each target</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.ml_utils.eval_outlier_detection_cv">
+<code class="descclassname">pipeline_tools.specificity.ml_utils.</code><code class="descname">eval_outlier_detection_cv</code><span class="sig-paren">(</span><em>proba_df</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.ml_utils.eval_outlier_detection_cv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.ml_utils.remove_outliers">
+<code class="descclassname">pipeline_tools.specificity.ml_utils.</code><code class="descname">remove_outliers</code><span class="sig-paren">(</span><em>data</em>, <em>target</em>, <em>contamination=0.2</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.ml_utils.remove_outliers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes outliers from the dataset using an IsolationForest</p>
+<dl class="simple">
+<dt>data: pandas df</dt><dd><p>df of the feature array</p>
+</dd>
+<dt>target<span class="classifier">pandas df</span></dt><dd><p>df of the labels</p>
+</dd>
+<dt>contamination<span class="classifier">float</span></dt><dd><p>percent of outliers to remove</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>data: pandas df</dt><dd><p>df of the feature array (without outliers)</p>
+</dd>
+<dt>sub_target<span class="classifier">pandas df</span></dt><dd><p>df of the labels (without outliers)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.ml_utils.set_min_class_count">
+<code class="descclassname">pipeline_tools.specificity.ml_utils.</code><code class="descname">set_min_class_count</code><span class="sig-paren">(</span><em>proba_df</em>, <em>min_count=10</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.ml_utils.set_min_class_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.ml_utils.trim_test_df">
+<code class="descclassname">pipeline_tools.specificity.ml_utils.</code><code class="descname">trim_test_df</code><span class="sig-paren">(</span><em>df_test</em>, <em>df_learn</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.ml_utils.trim_test_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>The test df can contain a feature (meaning an AS on a certain position) which is not present 
+in the training data, this needs to be removed</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pipeline_tools.specificity.prediction">
+<span id="pipeline-tools-specificity-prediction-module"></span><h2>pipeline_tools.specificity.prediction module<a class="headerlink" href="#module-pipeline_tools.specificity.prediction" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pipeline_tools.specificity.prediction.ML_encoder">
+<em class="property">class </em><code class="descclassname">pipeline_tools.specificity.prediction.</code><code class="descname">ML_encoder</code><a class="headerlink" href="#pipeline_tools.specificity.prediction.ML_encoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to handle the encoding of sequences for ML</p>
+<dl class="simple">
+<dt>csv_path<span class="classifier">str</span></dt><dd><p>The path to the csv file with the class label</p>
+</dd>
+<dt>fasta_path<span class="classifier">str</span></dt><dd><p>The path to the corresponding fasta file (aligned !)</p>
+</dd>
+<dt>fasta_rec<span class="classifier">SeqRec Bio</span></dt><dd><p>Parsed fasta file (the duplicates are removed)</p>
+</dd>
+<dt>class_dict<span class="classifier">dict</span></dt><dd><p>dict with class as key and seq as item</p>
+</dd>
+<dt>class_df<span class="classifier">pandas df</span></dt><dd><p>Dataframe (df) of class dict</p>
+</dd>
+<dt>target<span class="classifier">pandas df</span></dt><dd><p>df of the target (class label)</p>
+</dd>
+<dt>data<span class="classifier">pandas df</span></dt><dd><p>df of the data (features for ML)</p>
+</dd>
+<dt>class_df_OHE<span class="classifier">pandas df</span></dt><dd><p>Dataframe (df) of class dict (One-Hot_Encoded)</p>
+</dd>
+<dt>target_OHE<span class="classifier">pandas df</span></dt><dd><p>df of the target (class label) (One-Hot_Encoded)</p>
+</dd>
+<dt>data_OHE<span class="classifier">pandas df</span></dt><dd><p>df of the data (features for ML) (One-Hot_Encoded)</p>
+</dd>
+<dt>aligned_test_seq<span class="classifier">SeqRec Bio</span></dt><dd><p>Sequences to test aligned with the fasta_rec</p>
+</dd>
+<dt>df_ohe_test_seq<span class="classifier">pandas df</span></dt><dd><p>Sequences to test converted to df (One-Hot_Encoded)</p>
+</dd>
+<dt>test_df</dt><dd><p>df of the test seqs</p>
+</dd>
+<dt>test_data</dt><dd><p>df of the data (features for ML) (One-Hot_Encoded)</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="pipeline_tools.specificity.prediction.ML_encoder.add_seqs">
+<code class="descname">add_seqs</code><span class="sig-paren">(</span><em>seq_input</em>, <em>input_type='df'</em>, <em>min_records=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction.ML_encoder.add_seqs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert new seqs to a form which can be predicted</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>seq_input<span class="classifier">variable (str, SeqRec Bio, df)</span></dt><dd><p>The input to be predicted, parsed based on the input_type arg</p>
+</dd>
+<dt>input_type<span class="classifier">str</span></dt><dd><p>Input type for the prediction, can be a df of the pure seqs,
+a record of the seqs or a path to the seqs (fasta)</p>
+</dd>
+<dt>min_records<span class="classifier">bool</span></dt><dd><p>If min records is used only a small subset (each class is represented ones) 
+of the original alignment is 
+used for the realignment, this is much faster then using for example 
+an entire alignment of 2000 seqs, but the resulting realigned alignment is 
+slightly different, initial tests showed, that the influence on the prediction 
+is minimal.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pipeline_tools.specificity.prediction.ML_encoder.assign_undefined">
+<code class="descname">assign_undefined</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction.ML_encoder.assign_undefined" title="Permalink to this definition">¶</a></dt>
+<dd><p>assignes classes which can not be predictied 
+(using default values of the function) as undefined classes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pipeline_tools.specificity.prediction.ML_encoder.class_OneHotEncoder">
+<code class="descname">class_OneHotEncoder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction.ML_encoder.class_OneHotEncoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>One-Hot-Encode the data, so far the best method to
+apply ML to prot seqs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pipeline_tools.specificity.prediction.ML_encoder.clean_ML_encoder">
+<code class="descname">clean_ML_encoder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction.ML_encoder.clean_ML_encoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>For storage it makes sens to remove all attributes 
+not needed for prediction.</p>
+<p>Probably not needed, the biggest storage problem is given by the
+number of random forests used by the large nrps dataset.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pipeline_tools.specificity.prediction.ML_encoder.create_minimum_alignment">
+<code class="descname">create_minimum_alignment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction.ML_encoder.create_minimum_alignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a record where each class is represented only ones,
+this can be used to realign new sequences much faster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pipeline_tools.specificity.prediction.ML_encoder.get_alignment">
+<code class="descname">get_alignment</code><span class="sig-paren">(</span><em>fasta_path</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction.ML_encoder.get_alignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>The csv should be a file with names corresponding to the aligned fasta file,
+can be created using the SSP-viz GUI</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pipeline_tools.specificity.prediction.ML_encoder.get_class_dict">
+<code class="descname">get_class_dict</code><span class="sig-paren">(</span><em>csv_path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction.ML_encoder.get_class_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the csv file and creates a class dict,</p>
+<p>kwrags are for the csv parsing:</p>
+<p>delimiter = ‘,’, 
+name_field = ‘Name’, 
+class_field = ‘Class’,
+exclude=[‘’], #classe to exclude
+reduce_DB=False, #if interger (i) reduces all classes with less then i items</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pipeline_tools.specificity.prediction.ML_encoder.get_pandas_class_df">
+<code class="descname">get_pandas_class_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction.ML_encoder.get_pandas_class_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>creates a ML useable pandas dataframe from the class_dict</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pipeline_tools.specificity.prediction.ML_encoder.predict_seqs">
+<code class="descname">predict_seqs</code><span class="sig-paren">(</span><em>threshold=0.05</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction.ML_encoder.predict_seqs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict the seqs in test_data based on the set clf</p>
+<dl class="simple">
+<dt>self.test_data</dt><dd><p>OHE test data</p>
+</dd>
+<dt>self.clf</dt><dd><p>classifier</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>specs<span class="classifier">list of specificities</span></dt><dd><p>specificties must match the possible string in structure_prediction.py</p>
+</dd>
+<dt>specs<span class="classifier">string of all specs (best 4)</span></dt><dd><p>sorted list of the best for specs, good for the final output and detailed analysis.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pipeline_tools.specificity.prediction.ML_encoder.remove_outliers">
+<code class="descname">remove_outliers</code><span class="sig-paren">(</span><em>contamination=0.2</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction.ML_encoder.remove_outliers" title="Permalink to this definition">¶</a></dt>
+<dd><p>removes outliers from the dataset</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pipeline_tools.specificity.prediction.ML_encoder.set_clf">
+<code class="descname">set_clf</code><span class="sig-paren">(</span><em>clf</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction.ML_encoder.set_clf" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual creation and fitting of the classifier (clf) should be outside the encoding class,
+any clf with a predict_proba function can be set here.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>clf<span class="classifier">sklearn clf</span></dt><dd><p>The classifier used for the prediction</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pipeline_tools.specificity.prediction_handler">
+<span id="pipeline-tools-specificity-prediction-handler-module"></span><h2>pipeline_tools.specificity.prediction_handler module<a class="headerlink" href="#module-pipeline_tools.specificity.prediction_handler" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pipeline_tools.specificity.prediction_handler.predict_specificity">
+<code class="descclassname">pipeline_tools.specificity.prediction_handler.</code><code class="descname">predict_specificity</code><span class="sig-paren">(</span><em>df</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction_handler.predict_specificity" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Handles the prediction of pks and nrps substrate specificity
+assigns it to all the domains in the module</p>
+<p>Parameters</p>
+</div></blockquote>
+<dl class="simple">
+<dt>df<span class="classifier">pandas df </span></dt><dd><p>Dataframe with colum ‘prot_seq’, ‘module_type’ and ‘type’</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>df<span class="classifier">pandas df </span></dt><dd><p>Dataframe with added column ‘specificity’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.prediction_handler.use_predictor">
+<code class="descclassname">pipeline_tools.specificity.prediction_handler.</code><code class="descname">use_predictor</code><span class="sig-paren">(</span><em>df=None</em>, <em>path=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.prediction_handler.use_predictor" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Loads the predictor pickle and predicts the specificity of the 
+seqs in the df</p>
+<p>Parameters</p>
+</div></blockquote>
+<dl class="simple">
+<dt>df<span class="classifier">pandas df </span></dt><dd><p>Dataframe with colum ‘prot_seq’,</p>
+</dd>
+<dt>path<span class="classifier">str</span></dt><dd><p>path to the pickle with the predictor</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>prediction<span class="classifier">list </span></dt><dd><p>list of the predicted classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pipeline_tools.specificity.seq_utils">
+<span id="pipeline-tools-specificity-seq-utils-module"></span><h2>pipeline_tools.specificity.seq_utils module<a class="headerlink" href="#module-pipeline_tools.specificity.seq_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pipeline_tools.specificity.seq_utils.align_new_seq">
+<code class="descclassname">pipeline_tools.specificity.seq_utils.</code><code class="descname">align_new_seq</code><span class="sig-paren">(</span><em>alignment</em>, <em>new_record</em>, <em>ALI_TEMP_FOLDER=None</em>, <em>Verbose=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.seq_utils.align_new_seq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds sequences to an alignment using mafft as alignment tool.
+Returns a dict of the new aligned seqs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.seq_utils.clean_seq_list">
+<code class="descclassname">pipeline_tools.specificity.seq_utils.</code><code class="descname">clean_seq_list</code><span class="sig-paren">(</span><em>bio_record</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.seq_utils.clean_seq_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>trims the seq list and removes . from alignment</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.seq_utils.csv2class_dict">
+<code class="descclassname">pipeline_tools.specificity.seq_utils.</code><code class="descname">csv2class_dict</code><span class="sig-paren">(</span><em>DISCRI_CSV_PATH, bio_record, delimiter=',', name_field='Name', class_field='Class', exclude=[''], reduce_DB=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.seq_utils.csv2class_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>converts an exsisting csv file to the class_dict,
+alllows to use csv_kwargs in order to pass specific parsing parameteres to the csv object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.seq_utils.df2fasta_rec">
+<code class="descclassname">pipeline_tools.specificity.seq_utils.</code><code class="descname">df2fasta_rec</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.seq_utils.df2fasta_rec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a dataframe of prot sequences into a fasta biopython record.</p>
+<dl class="simple">
+<dt>df<span class="classifier">df with columns ‘name’, ‘seq’</span></dt><dd><p>Input dataframe, columns must be there</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>records<span class="classifier">SeqRec</span></dt><dd><p>records of the seqs</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.seq_utils.minimum_fasta_rec">
+<code class="descclassname">pipeline_tools.specificity.seq_utils.</code><code class="descname">minimum_fasta_rec</code><span class="sig-paren">(</span><em>class_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.seq_utils.minimum_fasta_rec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a record where each class is represented only ones</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.specificity.seq_utils.unique_sequence_list">
+<code class="descclassname">pipeline_tools.specificity.seq_utils.</code><code class="descname">unique_sequence_list</code><span class="sig-paren">(</span><em>bio_record</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.specificity.seq_utils.unique_sequence_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>checks a biopython seq list for dublicates</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pipeline_tools.specificity">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pipeline_tools.specificity" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Description of the SeMPI 2.0 web-server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/primer.html">Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/genome_input.html">Genome input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/prediction_algo.html">Prediction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/genome_browser.html">Genome browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/database_screening.html">Database screening</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical explanation of the pipeline</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module documentation of the pipeline</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pipeline.html">pipeline module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="pipeline_tools.html">pipeline_tools package</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Update log</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/update_log.html">Updates</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pipeline_tools.rdkit_utils.html"
+                        title="previous chapter">pipeline_tools.rdkit_utils package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../chapters/update_log.html"
+                        title="next chapter">Updates</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../chapters/update_log.html" title="Updates"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pipeline_tools.rdkit_utils.html" title="pipeline_tools.rdkit_utils package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >Module documentation of the pipeline</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="pipeline_tools.html" >pipeline_tools package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Paul Zierep.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
+    </div>
+  </body>
+</html>

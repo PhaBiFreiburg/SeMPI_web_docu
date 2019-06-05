@@ -1,0 +1,13 @@
+pipeline
+========
+
+.. toctree::
+   :maxdepth: 4
+
+   pipeline
+   pipeline_add_permanent_output
+   pipeline_standalone
+   pipeline_subprocess_tracker
+   pipeline_tools
+   scoring_standalone
+   unit_tests

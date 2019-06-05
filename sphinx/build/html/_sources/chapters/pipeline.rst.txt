@@ -1,0 +1,10 @@
+Technical documentation of the prediction pipeline
+==================================================
+
+.. automodule:: pipeline
+
+.. autofunction:: genome_parsing
+
+.. automodule:: cluster_prediction
+
+.. autofunction:: combine_blocks

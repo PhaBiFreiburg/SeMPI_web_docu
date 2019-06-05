@@ -1,33 +1,22 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Database screening &#8212; SeMPI 2.0 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Updates" href="update_log.html" />
+    <link rel="next" title="Module documentation of the pipeline" href="../apidoc/modules.html" />
     <link rel="prev" title="Genome browser" href="genome_browser.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -35,7 +24,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="update_log.html" title="Updates"
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../apidoc/modules.html" title="Module documentation of the pipeline"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="genome_browser.html" title="Genome browser"
@@ -55,15 +47,15 @@
 <h2>Use cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
 <p>The database (DB) screening allows users:</p>
 <ol class="arabic simple">
-<li>to estimate the novelty of their gene clusters (a scaffold which does not match similar scaffolds in known databases, is very likely a novel cluster)</li>
-<li>the identification of possible post-modifications, which cannot be detected by prediction algorithms yet</li>
-<li>the identification of similar clusters (based on the product)</li>
-<li>the matching of custom defined molecules in a genome (using the scaffold upload tool)</li>
+<li><p>to estimate the novelty of their gene clusters (a scaffold which does not match similar scaffolds in known databases, is very likely a novel cluster)</p></li>
+<li><p>the identification of possible post-modifications, which cannot be detected by prediction algorithms yet</p></li>
+<li><p>the identification of similar clusters (based on the product)</p></li>
+<li><p>the matching of custom defined molecules in a genome (using the scaffold upload tool)</p></li>
 </ol>
 </div>
 <div class="section" id="algorithm">
 <h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h2>
-<div class="figure">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/scaffold_screening.svg"><img alt="scaffold_screening" src="../_images/scaffold_screening.svg" /></a>
 </div>
 <p>The database screening uses a two step approach to identify similar compounds from public DBs.</p>
@@ -102,8 +94,8 @@ molecules.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3><a href="../index.html">Table Of Contents</a></h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<h3><a href="../index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Description of the SeMPI 2.0 web-server</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="primer.html">Primer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genome_input.html">Genome input</a></li>
@@ -116,6 +108,13 @@ molecules.</p>
 <li class="toctree-l2"><a class="reference internal" href="#maximum-common-substructure-screening">Maximum Common Substructure Screening</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption"><span class="caption-text">Technical explanation of the pipeline</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/modules.html">Module documentation of the pipeline</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Update log</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="update_log.html">Updates</a></li>
 </ul>
 
@@ -123,16 +122,16 @@ molecules.</p>
   <p class="topless"><a href="genome_browser.html"
                         title="previous chapter">Genome browser</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="update_log.html"
-                        title="next chapter">Updates</a></p>
+  <p class="topless"><a href="../apidoc/modules.html"
+                        title="next chapter">Module documentation of the pipeline</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -146,7 +145,10 @@ molecules.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="update_log.html" title="Updates"
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../apidoc/modules.html" title="Module documentation of the pipeline"
              >next</a> |</li>
         <li class="right" >
           <a href="genome_browser.html" title="Genome browser"
@@ -156,7 +158,7 @@ molecules.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Paul Zierep.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
   </body>
 </html>

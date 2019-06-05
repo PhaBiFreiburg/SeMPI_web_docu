@@ -16,9 +16,12 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
+import os
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
+
+sys.path.insert(0, '/home/paul/GitRepos/PhaBiP2/pipeline')
+#sys.path.insert(1, '/home/paul/GitRepos/PhaBiP2/pipeline/pipeline_tools')
 
 
 # -- General configuration ------------------------------------------------
@@ -33,7 +36,8 @@
 extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
-    'sphinx.ext.mathjax'
+    'sphinx.ext.mathjax',
+    'sphinx.ext.autodoc',
     ]
 
 # Add any paths that contain templates here, relative to this directory.

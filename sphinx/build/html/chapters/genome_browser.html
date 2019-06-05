@@ -1,39 +1,31 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Genome browser &#8212; SeMPI 2.0 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Database screening" href="database_screening.html" />
     <link rel="prev" title="Prediction" href="prediction_algo.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="database_screening.html" title="Database screening"
              accesskey="N">next</a> |</li>
@@ -55,30 +47,30 @@
 help page.</p>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<div class="figure">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/genome_browser_01.svg"><img alt="genome_browser_01" src="../_images/genome_browser_01.svg" /></a>
 </div>
 <ol class="arabic simple">
-<li>The genome browser is available for the entire analyzed genome.</li>
-<li>But the browser can also be limited to the predicted cluster  (2) (and 10000bp of its surrounding).</li>
+<li><p>The genome browser is available for the entire analyzed genome.</p></li>
+<li><p>But the browser can also be limited to the predicted cluster  (2) (and 10000bp of its surrounding).</p></li>
 </ol>
-<div class="figure">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/genome_browser_02.svg"><img alt="genome_browser_02" src="../_images/genome_browser_02.svg" /></a>
 </div>
 <p>When directed to the genome browser, the entire genome is shown as a bar.</p>
 <ol class="arabic simple">
-<li>The initial area to display can be selected.</li>
-<li>The “Go to” button directs you to the detail view.</li>
+<li><p>The initial area to display can be selected.</p></li>
+<li><p>The “Go to” button directs you to the detail view.</p></li>
 </ol>
-<div class="figure">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/genome_browser_03.svg"><img alt="genome_browser_03" src="../_images/genome_browser_03.svg" /></a>
 </div>
 <ol class="arabic simple">
-<li>The browser visualizes the genes (CDS), biosynthetic gene cluster (BGC) relevant domains, modules, blocks and clusters.</li>
-<li>The figure can be exported in multiple formats.</li>
-<li>The area of display can be expanded/changed and contracted using the top panel.</li>
-<li>By clicking on the side panel text, the block can be collapsed, which is useful when too many genes/domains are shown (if the entire genome is shown thousands of genes might be displayed).</li>
-<li>By clicking on the field of interest additional informations are displayed.</li>
+<li><p>The browser visualizes the genes (CDS), biosynthetic gene cluster (BGC) relevant domains, modules, blocks and clusters.</p></li>
+<li><p>The figure can be exported in multiple formats.</p></li>
+<li><p>The area of display can be expanded/changed and contracted using the top panel.</p></li>
+<li><p>By clicking on the side panel text, the block can be collapsed, which is useful when too many genes/domains are shown (if the entire genome is shown thousands of genes might be displayed).</p></li>
+<li><p>By clicking on the field of interest additional informations are displayed.</p></li>
 </ol>
 </div>
 </div>
@@ -89,8 +81,8 @@ help page.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3><a href="../index.html">Table Of Contents</a></h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<h3><a href="../index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Description of the SeMPI 2.0 web-server</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="primer.html">Primer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genome_input.html">Genome input</a></li>
@@ -100,6 +92,13 @@ help page.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="database_screening.html">Database screening</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical explanation of the pipeline</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/modules.html">Module documentation of the pipeline</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Update log</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="update_log.html">Updates</a></li>
 </ul>
 
@@ -111,12 +110,12 @@ help page.</p>
                         title="next chapter">Database screening</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -130,6 +129,9 @@ help page.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="database_screening.html" title="Database screening"
              >next</a> |</li>
         <li class="right" >
@@ -140,7 +142,7 @@ help page.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Paul Zierep.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
   </body>
 </html>

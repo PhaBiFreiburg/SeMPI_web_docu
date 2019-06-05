@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pipeline module &#8212; SeMPI 2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pipeline_tools package" href="pipeline_tools.html" />
+    <link rel="prev" title="Module documentation of the pipeline" href="modules.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pipeline_tools.html" title="pipeline_tools package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="Module documentation of the pipeline"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">Module documentation of the pipeline</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pipeline">
+<span id="pipeline-module"></span><h1>pipeline module<a class="headerlink" href="#module-pipeline" title="Permalink to this headline">¶</a></h1>
+<p>SeMPI 2.0 main pipelien entry point, written by PZ</p>
+<dl class="function">
+<dt id="pipeline.genome_parsing">
+<code class="descclassname">pipeline.</code><code class="descname">genome_parsing</code><span class="sig-paren">(</span><em>input_path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline.genome_parsing" title="Permalink to this definition">¶</a></dt>
+<dd><p>The entire pipeline of SeMPI 2.0, callable as a subprocess,
+including a timeout handler, default kwargs and logging !!</p>
+<ul class="simple">
+<li><p>sets the default kwargs</p></li>
+<li><p>activates the logging protocol</p></li>
+</ul>
+<p>This func can parse multiple records in fasta and gbk, 
+for each record the kwargs are adjusted and the 
+single_record_genome_parsing is started</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline.single_record_genome_parsing">
+<code class="descclassname">pipeline.</code><code class="descname">single_record_genome_parsing</code><span class="sig-paren">(</span><em>input_path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline.single_record_genome_parsing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the pipeline for each record individually.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline.smiles_scoring">
+<code class="descclassname">pipeline.</code><code class="descname">smiles_scoring</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline.smiles_scoring" title="Permalink to this definition">¶</a></dt>
+<dd><p>The entire pipeline of SeMPI 2.0, callable as a subprocess,
+including a timeout handler, default kwargs and logging !!</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Description of the SeMPI 2.0 web-server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/primer.html">Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/genome_input.html">Genome input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/prediction_algo.html">Prediction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/genome_browser.html">Genome browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/database_screening.html">Database screening</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical explanation of the pipeline</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module documentation of the pipeline</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html">pipeline_tools package</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Update log</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/update_log.html">Updates</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="modules.html"
+                        title="previous chapter">Module documentation of the pipeline</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pipeline_tools.html"
+                        title="next chapter">pipeline_tools package</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pipeline_tools.html" title="pipeline_tools package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="Module documentation of the pipeline"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >Module documentation of the pipeline</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Paul Zierep.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
+    </div>
+  </body>
+</html>

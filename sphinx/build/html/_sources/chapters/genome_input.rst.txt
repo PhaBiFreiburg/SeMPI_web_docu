@@ -8,7 +8,7 @@ Input form
    :scale: 50 %
    :alt: input
 
-   Screenshot of the input view
+   Screenshot of the input view.
 
 
 #. Upload a gene file (DNA) in FASTA or GeneBank format. Drop and drag is also supported.

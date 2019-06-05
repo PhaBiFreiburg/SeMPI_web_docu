@@ -3,24 +3,40 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to SeMPI's documentation!
-=================================
+Welcome to the SeMPI 2.0 documentation
+======================================
+
+.. _main_docu:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Description of the SeMPI 2.0 web-server
 
    chapters/primer
    chapters/genome_input
    chapters/prediction_algo
    chapters/genome_browser
    chapters/database_screening
-   chapters/update_log
 
+Search
+======
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
+
+Technical documentation
+=======================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Technical explanation of the pipeline
+
+   apidoc/modules
+
+Updates
+=======
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Update log
+
+   chapters/update_log

@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Module documentation of the pipeline &#8212; SeMPI 2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pipeline module" href="pipeline.html" />
+    <link rel="prev" title="Database screening" href="../chapters/database_screening.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pipeline.html" title="pipeline module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../chapters/database_screening.html" title="Database screening"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-documentation-of-the-pipeline">
+<h1>Module documentation of the pipeline<a class="headerlink" href="#module-documentation-of-the-pipeline" title="Permalink to this headline">¶</a></h1>
+<p>This is a automatically created module documentation of
+the SeMPI 2.0 prediction pipeline. Every module and function is
+described using numpy style doc-strings.</p>
+<p>This documentation is not comprehensive and mainly intended for
+developers working on the project, the usage of the web-server
+is entire described in <a class="reference internal" href="../index.html#main-docu"><span class="std std-ref">Description of the SeMPI 2.0 web-server</span></a>.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pipeline.html">pipeline module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipeline_tools.html">pipeline_tools package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_tools.rdkit_utils.html">pipeline_tools.rdkit_utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pipeline_tools.rdkit_utils.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pipeline_tools.rdkit_utils.html#module-pipeline_tools.rdkit_utils.DB_scoring">pipeline_tools.rdkit_utils.DB_scoring module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pipeline_tools.rdkit_utils.html#module-pipeline_tools.rdkit_utils.DB_set_up">pipeline_tools.rdkit_utils.DB_set_up module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pipeline_tools.rdkit_utils.html#module-pipeline_tools.rdkit_utils.color_tools">pipeline_tools.rdkit_utils.color_tools module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pipeline_tools.rdkit_utils.html#module-pipeline_tools.rdkit_utils.drawing_tools">pipeline_tools.rdkit_utils.drawing_tools module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pipeline_tools.rdkit_utils.html#module-pipeline_tools.rdkit_utils">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline_tools.specificity.html">pipeline_tools.specificity package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pipeline_tools.specificity.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pipeline_tools.specificity.html#module-pipeline_tools.specificity.ml_utils">pipeline_tools.specificity.ml_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pipeline_tools.specificity.html#module-pipeline_tools.specificity.prediction">pipeline_tools.specificity.prediction module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pipeline_tools.specificity.html#module-pipeline_tools.specificity.prediction_handler">pipeline_tools.specificity.prediction_handler module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pipeline_tools.specificity.html#module-pipeline_tools.specificity.seq_utils">pipeline_tools.specificity.seq_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pipeline_tools.specificity.html#module-pipeline_tools.specificity">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#module-pipeline_tools.cluster_prediction">pipeline_tools.cluster_prediction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#module-pipeline_tools.database_handling">pipeline_tools.database_handling module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#module-pipeline_tools.dataframe_curation">pipeline_tools.dataframe_curation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#module-pipeline_tools.file_handling">pipeline_tools.file_handling module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#module-pipeline_tools.gbk_output_generation">pipeline_tools.gbk_output_generation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#module-pipeline_tools.gene_prediction">pipeline_tools.gene_prediction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#module-pipeline_tools.genome_diagram">pipeline_tools.genome_diagram module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#module-pipeline_tools.module_prediction">pipeline_tools.module_prediction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#module-pipeline_tools.protein_prediction">pipeline_tools.protein_prediction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#module-pipeline_tools.scoring_standalone_utils">pipeline_tools.scoring_standalone_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#module-pipeline_tools.structure_prediction">pipeline_tools.structure_prediction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html#module-pipeline_tools">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="../genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="../py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Description of the SeMPI 2.0 web-server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/primer.html">Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/genome_input.html">Genome input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/prediction_algo.html">Prediction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/genome_browser.html">Genome browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/database_screening.html">Database screening</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical explanation of the pipeline</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module documentation of the pipeline</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pipeline.html">pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline_tools.html">pipeline_tools package</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Update log</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/update_log.html">Updates</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../chapters/database_screening.html"
+                        title="previous chapter">Database screening</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pipeline.html"
+                        title="next chapter">pipeline module</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pipeline.html" title="pipeline module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../chapters/database_screening.html" title="Database screening"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Paul Zierep.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
+    </div>
+  </body>
+</html>

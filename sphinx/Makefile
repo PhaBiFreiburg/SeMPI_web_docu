@@ -3,7 +3,8 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
+# SPHINXBUILD   = sphinx-build
+SPHINXBUILD   = /home/paul/tools/anaconda3/envs/my-rdkit-env/bin/sphinx-build
 SPHINXPROJ    = SeMPI
 SOURCEDIR     = source
 BUILDDIR      = build

@@ -1,0 +1,7 @@
+scoring\_standalone module
+==========================
+
+.. automodule:: scoring_standalone
+    :members:
+    :undoc-members:
+    :show-inheritance:

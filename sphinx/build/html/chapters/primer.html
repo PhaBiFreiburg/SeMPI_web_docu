@@ -1,33 +1,22 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Primer &#8212; SeMPI 2.0 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Genome input" href="genome_input.html" />
-    <link rel="prev" title="Welcome to SeMPI’s documentation!" href="../index.html" /> 
-  </head>
-  <body>
+    <link rel="prev" title="Welcome to the SeMPI 2.0 documentation" href="../index.html" /> 
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -35,10 +24,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="genome_input.html" title="Genome input"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="Welcome to SeMPI’s documentation!"
+          <a href="../index.html" title="Welcome to the SeMPI 2.0 documentation"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li> 
       </ul>
@@ -58,7 +50,7 @@
 <div class="section" id="help-on-website">
 <h2>Help on website<a class="headerlink" href="#help-on-website" title="Permalink to this headline">¶</a></h2>
 <p>We try to make SeMPI as user friendly as possible for such a complex pipeline. Therefore, we assign components which are not absolutely self-explanatory with an  question mark. Which upon hovering, displays additional information.</p>
-<div class="figure">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/help.png"><img alt="prediction" src="../_images/help.png" style="width: 64.0px; height: 64.0px;" /></a>
 </div>
 <p>If you think some components are not clearly explained or need more information, please contact us and we will take care of it.</p>
@@ -71,8 +63,8 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3><a href="../index.html">Table Of Contents</a></h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<h3><a href="../index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Description of the SeMPI 2.0 web-server</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Primer</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
@@ -83,23 +75,30 @@
 <li class="toctree-l1"><a class="reference internal" href="prediction_algo.html">Prediction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genome_browser.html">Genome browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="database_screening.html">Database screening</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical explanation of the pipeline</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/modules.html">Module documentation of the pipeline</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Update log</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="update_log.html">Updates</a></li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="../index.html"
-                        title="previous chapter">Welcome to SeMPI’s documentation!</a></p>
+                        title="previous chapter">Welcome to the SeMPI 2.0 documentation</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="genome_input.html"
                         title="next chapter">Genome input</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -113,17 +112,20 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="genome_input.html" title="Genome input"
              >next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="Welcome to SeMPI’s documentation!"
+          <a href="../index.html" title="Welcome to the SeMPI 2.0 documentation"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Paul Zierep.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
   </body>
 </html>

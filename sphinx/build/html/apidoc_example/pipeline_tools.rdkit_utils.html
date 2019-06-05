@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pipeline_tools.rdkit_utils package &#8212; SeMPI 2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pipeline-tools-rdkit-utils-package">
+<h1>pipeline_tools.rdkit_utils package<a class="headerlink" href="#pipeline-tools-rdkit-utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pipeline_tools.rdkit_utils.DB_scoring">
+<span id="pipeline-tools-rdkit-utils-db-scoring-module"></span><h2>pipeline_tools.rdkit_utils.DB_scoring module<a class="headerlink" href="#module-pipeline_tools.rdkit_utils.DB_scoring" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.DB_scoring_full">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">DB_scoring_full</code><span class="sig-paren">(</span><em>query_smiles</em>, <em>custom_sdf=None</em>, <em>match_limit=50</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.DB_scoring_full" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performes the DB search of the predicted compounds:
+1) fingerprint search
+2) substructure match for each compound
+3) Colored figures</p>
+<p>query_smiles : list of smiles</p>
+<dl class="simple">
+<dt>result_df<span class="classifier">pandas df</span></dt><dd><p>df with the results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.MCS_indices">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">MCS_indices</code><span class="sig-paren">(</span><em>target_mol</em>, <em>query_mol</em>, <em>bondCompare=False</em>, <em>MCS_timeout=1</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.MCS_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the indices for the MCS
+the MCS can have multiple sub structures</p>
+<dl class="simple">
+<dt>target_mol<span class="classifier">mol</span></dt><dd><p>Mol to match the querys</p>
+</dd>
+<dt>query_mol<span class="classifier">mol</span></dt><dd><p>Query mols</p>
+</dd>
+<dt>bondCompare<span class="classifier">bool</span></dt><dd><p>Compares the bond excactly.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>target_ss_matches<span class="classifier">list of tuples</span></dt><dd><p>substructure matches of the query in the target</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.bond_match_by_MCS">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">bond_match_by_MCS</code><span class="sig-paren">(</span><em>target_mol</em>, <em>query_mols</em>, <em>indices_of_best_score</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.bond_match_by_MCS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the amount of bonds that match in the target_mol</p>
+<p>target_mol : rdkit mol object</p>
+<p>query_mols : list of rdkit mol objects</p>
+<p>indices_of_best_score : list of lists of ints</p>
+<p>indices in the target_mol</p>
+<p>total_bond_match : int</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.calc_confidence_score">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">calc_confidence_score</code><span class="sig-paren">(</span><em>target_mol</em>, <em>query_mol</em>, <em>total_match</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.calc_confidence_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the confidence scores for the target and query
+Defined as the num of matches (bond and atom) / ppossible matches (all atoms and bonds)</p>
+<p>target_mol : rdkit mol object</p>
+<p>query_mol : rdkit mol object</p>
+<p>total_match : int</p>
+<p>todo</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.cluster_df_scoring">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">cluster_df_scoring</code><span class="sig-paren">(</span><em>df</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.cluster_df_scoring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the DB_scoring_full algo on each smiles</p>
+<p>df : pandas df</p>
+<dl class="simple">
+<dt>cluster_dict<span class="classifier">dict</span></dt><dd><p>dict with cluster id as key and pandas df of the results as value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.color_substructs">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">color_substructs</code><span class="sig-paren">(</span><em>target_mol</em>, <em>indices</em>, <em>color_style=''</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.color_substructs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Colors each tuble in the indices in a different color</p>
+<dl class="simple">
+<dt>target_mol<span class="classifier">mol</span></dt><dd><p>Mol to color</p>
+</dd>
+<dt>indices<span class="classifier">list of tuples</span></dt><dd><p>Indices of atoms to color</p>
+</dd>
+<dt>color_style<span class="classifier">string</span></dt><dd><p>Possible styles are ‘b’ (only bonds), ‘a’ (only atoms), 
+‘’ (both)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>SVG<span class="classifier">string</span></dt><dd><p>SVG string of the figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.combine_mols">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">combine_mols</code><span class="sig-paren">(</span><em>mols</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.combine_mols" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combines mols and takes care of rdkit finalizing</p>
+<p>mols : list of mols</p>
+<p>main_mol : mol</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.fingerprint_search">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">fingerprint_search</code><span class="sig-paren">(</span><em>query_mols</em>, <em>match_limit=50</em>, <em>db_selection='all'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.fingerprint_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>fingerprint search using morgan fingerprints in the DB created wtih DB_set_up.py</p>
+<p>query_mols : list of mols</p>
+<dl class="simple">
+<dt>result_df<span class="classifier">pandas df</span></dt><dd><p>df with the results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.fingerprint_search_custom_DB">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">fingerprint_search_custom_DB</code><span class="sig-paren">(</span><em>query_mols</em>, <em>match_limit=50</em>, <em>custom_sdf=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.fingerprint_search_custom_DB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.get_bonds_of_atoms">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">get_bonds_of_atoms</code><span class="sig-paren">(</span><em>mol</em>, <em>indices</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.get_bonds_of_atoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the indices of bonds for a set of atoms 
+in a mol.</p>
+<dl class="simple">
+<dt>mol<span class="classifier">mol</span></dt><dd><p>Ref. mol</p>
+</dd>
+<dt>indices<span class="classifier">list</span></dt><dd><p>Indices of atoms</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bond_indices<span class="classifier">list</span></dt><dd><p>Indices of the corresponing bonds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.keep_mol_atoms_by_indice">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">keep_mol_atoms_by_indice</code><span class="sig-paren">(</span><em>mol</em>, <em>indices</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.keep_mol_atoms_by_indice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Keeps only the atoms with the given indices from the mol</p>
+<p>This works, because when removing atoms with highest num,
+the indices get not changed.
+<a class="reference external" href="https://sourceforge.net/p/rdkit/mailman/message/28157259/">https://sourceforge.net/p/rdkit/mailman/message/28157259/</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.remove_mol_atoms_by_indice">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">remove_mol_atoms_by_indice</code><span class="sig-paren">(</span><em>mol</em>, <em>indices</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.remove_mol_atoms_by_indice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the atoms with the given indices from the mol</p>
+<p>This works, because when removing atoms with highest num,
+the indices get not changed.
+<a class="reference external" href="https://sourceforge.net/p/rdkit/mailman/message/28157259/">https://sourceforge.net/p/rdkit/mailman/message/28157259/</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.score_for_overlap">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">score_for_overlap</code><span class="sig-paren">(</span><em>mol</em>, <em>score</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.score_for_overlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the amount of atoms which are not covered by the query</p>
+<p>target_mol : rdkit mol object</p>
+<p>score : int</p>
+<p>overlap : int</p>
+<p>Number of atoms in the target not covered by the query</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.substructure_match">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">substructure_match</code><span class="sig-paren">(</span><em>target_mol</em>, <em>query_mols</em>, <em>bondCompare=False</em>, <em>verbose=False</em>, <em>ss_limit=20</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.substructure_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Matches multiple query_mols to the target_mol as substructs,
+the score represents the number of indices covered by the query_mols</p>
+<p>For each query all possible matches are computed,
+then reduced targets are created and the next query is matched for this target
+recursively, this leads to all possible matches of querys in the mol</p>
+<dl class="simple">
+<dt>target_mol<span class="classifier">mol</span></dt><dd><p>Mol to match the querys</p>
+</dd>
+<dt>query_mols<span class="classifier">list of mols</span></dt><dd><p>Query mols</p>
+</dd>
+<dt>bondCompare<span class="classifier">bool</span></dt><dd><p>Include a bond comparison to the MCS algo, (can lead to much smaller scaffolds)</p>
+</dd>
+<dt>verbose<span class="classifier">bool</span></dt><dd><p>Prints the process of the recursive function</p>
+</dd>
+<dt>ss_limit<span class="classifier">int</span></dt><dd><p>Number of possible matches per target, some mols can have a lot,
+therefore should be limited</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Scores<span class="classifier">list of tuples</span></dt><dd><p>The tuples contain (score, (indices of matches));
+sorted by score</p>
+</dd>
+</dl>
+<p>Returns a sorted list, of score, combination pairs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.DB_scoring.substructure_match_pd">
+<code class="descclassname">pipeline_tools.rdkit_utils.DB_scoring.</code><code class="descname">substructure_match_pd</code><span class="sig-paren">(</span><em>smiles</em>, <em>name</em>, <em>query_mols</em>, <em>LOG_PATH</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.DB_scoring.substructure_match_pd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the substructure match, 
+including negative overlap score and the figure</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pipeline_tools.rdkit_utils.DB_set_up">
+<span id="pipeline-tools-rdkit-utils-db-set-up-module"></span><h2>pipeline_tools.rdkit_utils.DB_set_up module<a class="headerlink" href="#module-pipeline_tools.rdkit_utils.DB_set_up" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pipeline_tools.rdkit_utils.color_tools">
+<span id="pipeline-tools-rdkit-utils-color-tools-module"></span><h2>pipeline_tools.rdkit_utils.color_tools module<a class="headerlink" href="#module-pipeline_tools.rdkit_utils.color_tools" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pipeline_tools.rdkit_utils.drawing_tools">
+<span id="pipeline-tools-rdkit-utils-drawing-tools-module"></span><h2>pipeline_tools.rdkit_utils.drawing_tools module<a class="headerlink" href="#module-pipeline_tools.rdkit_utils.drawing_tools" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.drawing_tools.draw_svg">
+<code class="descclassname">pipeline_tools.rdkit_utils.drawing_tools.</code><code class="descname">draw_svg</code><span class="sig-paren">(</span><em>svg</em>, <em>name</em>, <em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.drawing_tools.draw_svg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.drawing_tools.mol2fig_size">
+<code class="descclassname">pipeline_tools.rdkit_utils.drawing_tools.</code><code class="descname">mol2fig_size</code><span class="sig-paren">(</span><em>target_mol</em>, <em>multiplyer=1</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.drawing_tools.mol2fig_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjusts the size of a mol fig to the number of atoms in the mol</p>
+<dl class="simple">
+<dt>mol<span class="classifier">mol</span></dt><dd><p>mol to draw</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>molSize<span class="classifier">list[x,y]</span></dt><dd><p>size of the figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.drawing_tools.mol2svg">
+<code class="descclassname">pipeline_tools.rdkit_utils.drawing_tools.</code><code class="descname">mol2svg</code><span class="sig-paren">(</span><em>mol</em>, <em>molSize=(450</em>, <em>150)</em>, <em>kekulize=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.drawing_tools.mol2svg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create svg figure of a mol</p>
+<dl class="simple">
+<dt>mol<span class="classifier">mol</span></dt><dd><p>mol to draw</p>
+</dd>
+<dt>molSize<span class="classifier">tuple</span></dt><dd><p>size of the figure</p>
+</dd>
+<dt>kekulize<span class="classifier">bool</span></dt><dd><p>see rdkit docu</p>
+</dd>
+</dl>
+<p>SVG : string
+Figure of the svg</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.drawing_tools.mol2svg_with_color">
+<code class="descclassname">pipeline_tools.rdkit_utils.drawing_tools.</code><code class="descname">mol2svg_with_color</code><span class="sig-paren">(</span><em>mol</em>, <em>color</em>, <em>molSize=(450</em>, <em>150)</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.drawing_tools.mol2svg_with_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create svg figure of a mol</p>
+<dl class="simple">
+<dt>mol<span class="classifier">mol</span></dt><dd><p>mol to draw</p>
+</dd>
+<dt>molSize<span class="classifier">tuple</span></dt><dd><p>size of the figure</p>
+</dd>
+<dt>kekulize<span class="classifier">bool</span></dt><dd><p>see rdkit docu</p>
+</dd>
+</dl>
+<p>SVG : string
+Figure of the svg</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.drawing_tools.smiles2svg">
+<code class="descclassname">pipeline_tools.rdkit_utils.drawing_tools.</code><code class="descname">smiles2svg</code><span class="sig-paren">(</span><em>smiles</em>, <em>color=None</em>, <em>molSize=(600</em>, <em>300)</em>, <em>auto_adjust=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.drawing_tools.smiles2svg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a svg from smiles input, with auto figures size adjustment (sloppy but good enough)</p>
+<dl class="simple">
+<dt>smiles<span class="classifier">string</span></dt><dd><p>smiles to be drawn</p>
+</dd>
+<dt>molSize<span class="classifier">tuple</span></dt><dd><p>size of the mol</p>
+</dd>
+<dt>auto_adjust<span class="classifier">bool</span></dt><dd><p>adjusts the molSize automatically</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>svg<span class="classifier">string</span></dt><dd><p>svg of the mol</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.drawing_tools.smiles2svg_auto">
+<code class="descclassname">pipeline_tools.rdkit_utils.drawing_tools.</code><code class="descname">smiles2svg_auto</code><span class="sig-paren">(</span><em>target_smiles</em>, <em>molSize=(600</em>, <em>300)</em>, <em>auto_adjust=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.drawing_tools.smiles2svg_auto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a svg from smiles input, uses auto creation of the scaffold (almost perfect)</p>
+<dl class="simple">
+<dt>target_smiles<span class="classifier">string</span></dt><dd><p>smiles to be drawn</p>
+</dd>
+<dt>scaffold_smiles<span class="classifier">string</span></dt><dd><p>smiles to be used for the linear orientation (must be the scaffold of the same mol)</p>
+</dd>
+<dt>molSize<span class="classifier">tuple</span></dt><dd><p>size of the mol</p>
+</dd>
+<dt>auto_adjust<span class="classifier">bool</span></dt><dd><p>adjusts the molSize automatically</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>svg<span class="classifier">string</span></dt><dd><p>svg of the mol</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.drawing_tools.smiles2svg_temp">
+<code class="descclassname">pipeline_tools.rdkit_utils.drawing_tools.</code><code class="descname">smiles2svg_temp</code><span class="sig-paren">(</span><em>target_smiles</em>, <em>scaffold_smiles</em>, <em>molSize=(600</em>, <em>300)</em>, <em>auto_adjust=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.drawing_tools.smiles2svg_temp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a svg from smiles input, and a template to create linear figures, 
+with auto figures size adjustment (sloppy but good enough)</p>
+<dl class="simple">
+<dt>target_smiles<span class="classifier">string</span></dt><dd><p>smiles to be drawn</p>
+</dd>
+<dt>scaffold_smiles<span class="classifier">string</span></dt><dd><p>smiles to be used for the linear orientation (must be the scaffold of the same mol)</p>
+</dd>
+<dt>molSize<span class="classifier">tuple</span></dt><dd><p>size of the mol</p>
+</dd>
+<dt>auto_adjust<span class="classifier">bool</span></dt><dd><p>adjusts the molSize automatically</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>svg<span class="classifier">string</span></dt><dd><p>svg of the mol</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.drawing_tools.smiles_compute_linear_scaffold">
+<code class="descclassname">pipeline_tools.rdkit_utils.drawing_tools.</code><code class="descname">smiles_compute_linear_scaffold</code><span class="sig-paren">(</span><em>target_smiles</em>, <em>scaffold_smiles</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.drawing_tools.smiles_compute_linear_scaffold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes linear mol for the target_smiles</p>
+<dl class="simple">
+<dt>target_smiles<span class="classifier">string</span></dt><dd><p>smiles to be drawn</p>
+</dd>
+<dt>scaffold_smiles<span class="classifier">string</span></dt><dd><p>smiles to be used for the linear orientation (must be the scaffold of the same mol)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>mol<span class="classifier">mol</span></dt><dd><p>linear mol of the target_smiles</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pipeline_tools.rdkit_utils.drawing_tools.smiles_compute_linear_scaffold_auto">
+<code class="descclassname">pipeline_tools.rdkit_utils.drawing_tools.</code><code class="descname">smiles_compute_linear_scaffold_auto</code><span class="sig-paren">(</span><em>target_smiles</em><span class="sig-paren">)</span><a class="headerlink" href="#pipeline_tools.rdkit_utils.drawing_tools.smiles_compute_linear_scaffold_auto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes linear mol for the target_smiles without scaffold, 
+creates the scaffold from the longest path trough the mol</p>
+<dl class="simple">
+<dt>target_smiles<span class="classifier">string</span></dt><dd><p>smiles to be drawn</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>target_mol<span class="classifier">mol</span></dt><dd><p>linear mol of the target_smiles</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pipeline_tools.rdkit_utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pipeline_tools.rdkit_utils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/primer.html">Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/genome_input.html">Genome input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/prediction_algo.html">Prediction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/genome_browser.html">Genome browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/database_screening.html">Database screening</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/update_log.html">Updates</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Paul Zierep.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
+    </div>
+  </body>
+</html>
