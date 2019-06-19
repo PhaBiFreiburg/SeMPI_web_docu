@@ -42,19 +42,33 @@
 <h1>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center">
+<div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/prediction.svg"><img alt="prediction" src="../_images/prediction.svg" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Flow chart of the prediction pipeline.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
+</div>
+<div class="section" id="curration-1">
+<h2>Curration (1)<a class="headerlink" href="#curration-1" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id2">
+<span id="df-processing"></span><a class="reference internal image-reference" href="../_images/df_processing.svg"><img alt="prediction" src="../_images/df_processing.svg" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Curration steps: (a) Block generation, (b) Domain reordering, (c) Domain overlap removal, (d) Domain doublication joining.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>After the protein detection the genome is converted into a data frame (pandas), which simplifies the subsequent operations. Additional, pandas allows to apply vectorized functions, which speeds up the prediction pipeline. A mysql dump of the data frame is provided with the final output.</p>
+<p>The data frame is curated and modified in order to prepare the BGC module detection (see Example <a class="reference internal" href="#df-processing"><span class="std std-numref">Fig. 5</span></a>).
+(a) Close genes (&lt;= 5000bp) which encode proteins on the same strand are combined into blocks. A detailed observation of the MIBiG annotated NRPS and PKS clusters showed, that for this condition the co-linearity principle applies for the very most cases.
+(b) The domains are ordered based on the occurrence in the genome, but for module assignment it is more useful to order the domains based on the occurrence in the block, therefore an additional index is assigned based on the block order.
+(c) In very rare cases the detected protein domains overlap. This can be the case especially for very short sequences (for example the ACP domain). If the domains overlap to more then 20% the domain with the lower bitscore is removed.
+(d) Sometimes the HMM algorithm detects two domains behind each other instead of one domain, these domains are automatically joined to one domain.</p>
 </div>
 <div class="section" id="protein-prediction">
 <h2>Protein prediction<a class="headerlink" href="#protein-prediction" title="Permalink to this headline">¶</a></h2>
 <p>The detection of relevant proteins in the genes is performed using profile hidden Markov models (pHMMs) created with HMMER 3.0. This step is common to most prediction tools at present. But as HMMER 3.0 is the state-of-the-art for sensitive sequence homologue detection, there is no reason to reinvent the wheel. Nevertheless, SeMPI uses its own profiles created with in-house sequence databases. The following proteins are detected:</p>
-<table class="colwidths-given docutils align-center" id="id1">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">HMM profiles used for domain detection</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-center" id="id3">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">HMM profiles used for domain detection</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 67%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 50%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Full name</p></th>
@@ -125,6 +139,7 @@
 <li class="toctree-l1"><a class="reference internal" href="genome_input.html">Genome input</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Prediction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#curration-1">Curration (1)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#protein-prediction">Protein prediction</a></li>
 </ul>
 </li>
