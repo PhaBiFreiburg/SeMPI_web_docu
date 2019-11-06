@@ -43,8 +43,7 @@
 <p>SeMPI allows to screen publicly available natural compound databases (DBs).
 The query can be the predicted scaffolds of a cluster, a user defined modification of
 scaffolds or a totally user defined set of molecules.</p>
-<p>The DB screening is not limited to one scaffold. As SeMPI can predict multiple scaffolds for one cluster (where the order of continues blocks can not be derived), so that the screening allow to submit multiple scaffolds for
-a query.</p>
+<p>The DB screening is not limited to one scaffold. SeMPI can predict multiple fragment-scaffolds for one cluster (in case the order of the blocks cannot be determined). The screening therefore allows to submit multiple scaffolds for one query.</p>
 <p>Additionally to the pre-computed DBs, the user can upload custom defined DBs in SDF or SMILES format.</p>
 <p>The database screening can also be performed for user defined molecules and molecule sets,
 entirely without preliminarily prediction.
@@ -91,7 +90,9 @@ original prediction.</p>
 <p>The custom DB choice allows to upload a file with user defined target molecules which can be screened additionally to the default DB choices. It is also possible to screen only a user defined DB, just untick
 all the default DB choices before submission.</p>
 <p>The format for the custom DB must be either SDF or SMILES format.
-Examples of both input types can be downloaded from the <a class="reference external" href="http://132.230.102.133/scaffold_upload">Scaffold upload</a> page.</p>
+Examples of both input types can be downloaded from the <a class="reference external" href="http://132.230.102.133/scaffold_upload">Scaffold upload</a> page, at the bottom. These files simply contain a benzene and phenol structure which be used to
+test the scaffold screening.</p>
+<p>One simple way to understand the screening pipeline could be to download one of the example input files. And screen them for a custom drawn structure.</p>
 </div>
 <div class="section" id="fingerprint-screening">
 <span id="fp-screen"></span><h2>Fingerprint screening<a class="headerlink" href="#fingerprint-screening" title="Permalink to this headline">¶</a></h2>
@@ -112,12 +113,21 @@ This allows SeMPI to match correct scaffolds also of clusters where only fragmen
 <div class="section" id="maximum-common-substructure-ranking">
 <span id="mcs-rank"></span><h2>Maximum Common Substructure Ranking<a class="headerlink" href="#maximum-common-substructure-ranking" title="Permalink to this headline">¶</a></h2>
 <p>Even though the FP screening collects very close matches to the predicted scaffolds,
-some properties cannot be matches accurately with FPs.</p>
-<p>For example: The order of building blocks cannot be accurately represented even by count vectors.</p>
-<p>Therefore an ranking is applied to the pre-selected molecules.</p>
+some properties cannot be matched accurately with FPs.
+For example the order of building blocks cannot be represented correctly even by count vectors.
+Similar building blocks in different order can lead to wrong ranking solely based on fingerprints (see <a class="reference internal" href="#fp-example"><span class="std std-numref">Fig. 10</span></a>). Therefore an MCS based ranking is applied to the pre-selected molecules.</p>
+<div class="figure align-center" id="id6">
+<span id="fp-example"></span><a class="reference internal image-reference" href="../_images/fp_based_search_example.png"><img alt="../_images/fp_based_search_example.png" src="../_images/fp_based_search_example.png" style="width: 748.0px; height: 384.5px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Hypothetical screening of two building blocks of two alanine (block 0) and one serine (block 1) against
+an two peptides (A-A-S) and (A-S-A). The peptide with the correct order of building blocks gets a lower similarity score (based on FPs), whereas the ConfS scores (based on MCS) represents the expected ranking.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
 <p>The maximum common substructure (MCS) algorithm ranks the pre-selection based on the
 best MCS score for each scaffold fragment with the target
 molecules.</p>
+<div class="figure align-center" id="id7">
+<span id="mcs-algo"></span><a class="reference internal image-reference" href="../_images/MCS_algo.svg"><img alt="../_images/MCS_algo.svg" src="../_images/MCS_algo.svg" /></a>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Example demonstration of the MCS algorithm. To simplify the example only two building blocks are used, the algorithm can potentially scale up to 10 building blocks. (1) Initially the building blocks are ordered by their number of atoms. The matches of the biggest building blocks are most meaning-full. (2) All MCS of the first block (B1) with the target molecule (Mol) are computed. The example shows only one MCS, but some molecules (especially ring systems) can have large amounts of MCS. The number of MCS to find for each B1 in a Mol are limited to 20. A new molecule is created for each MCS, where the MCS is removed from the scaffold. This new molecule is then submitted to a new MCS search with the next building block (B2).</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 

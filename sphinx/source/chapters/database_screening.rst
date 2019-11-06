@@ -5,8 +5,7 @@ SeMPI allows to screen publicly available natural compound databases (DBs).
 The query can be the predicted scaffolds of a cluster, a user defined modification of 
 scaffolds or a totally user defined set of molecules.
 
-The DB screening is not limited to one scaffold. As SeMPI can predict multiple scaffolds for one cluster (where the order of continues blocks can not be derived), so that the screening allow to submit multiple scaffolds for 
-a query.
+The DB screening is not limited to one scaffold. SeMPI can predict multiple fragment-scaffolds for one cluster (in case the order of the blocks cannot be determined). The screening therefore allows to submit multiple scaffolds for one query.
 
 Additionally to the pre-computed DBs, the user can upload custom defined DBs in SDF or SMILES format.
 
@@ -110,16 +109,28 @@ Maximum Common Substructure Ranking
 ===================================
 
 Even though the FP screening collects very close matches to the predicted scaffolds, 
-some properties cannot be matches accurately with FPs.
+some properties cannot be matched accurately with FPs.
+For example the order of building blocks cannot be represented correctly even by count vectors.
+Similar building blocks in different order can lead to wrong ranking solely based on fingerprints (see :numref:`fp_example`). Therefore an MCS based ranking is applied to the pre-selected molecules. 
 
-For example: The order of building blocks cannot be accurately represented even by count vectors.
+.. _fp_example:
 
-Therefore an ranking is applied to the pre-selected molecules. 
+.. figure:: img/screenshots/fp_based_search_example.png
+   :scale: 50 %
+
+   Hypothetical screening of two building blocks of two alanine (block 0) and one serine (block 1) against 
+   an two peptides (A-A-S) and (A-S-A). The peptide with the correct order of building blocks gets a lower similarity score (based on FPs), whereas the ConfS scores (based on MCS) represents the expected ranking.
+
 
 The maximum common substructure (MCS) algorithm ranks the pre-selection based on the 
 best MCS score for each scaffold fragment with the target 
 molecules. 
 
 
+.. _mcs_algo:
 
+.. figure:: img/MCS_algo.svg
+   :scale: 50 %
+
+   Example demonstration of the MCS algorithm. To simplify the example only two building blocks are used, the algorithm can potentially scale up to 10 building blocks. (1) Initially the building blocks are ordered by their number of atoms. The matches of the biggest building blocks are most meaning-full. (2) All MCS of the first block (B1) with the target molecule (Mol) are computed. The example shows only one MCS, but some molecules (especially ring systems) can have large amounts of MCS. The number of MCS to find for each B1 in a Mol are limited to 20. A new molecule is created for each MCS, where the MCS is removed from the scaffold. This new molecule is then submitted to a new MCS search with the next building block (B2). 
 
