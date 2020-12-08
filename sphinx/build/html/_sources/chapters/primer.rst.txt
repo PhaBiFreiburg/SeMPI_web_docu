@@ -12,8 +12,8 @@ SeMPI 2 provides a prediction pipeline for PKS (type I) and NRPS biosynthetic ge
 .. https://en.wikipedia.org/wiki/Nonribosomal_peptide
 .. https://en.wikipedia.org/wiki/Polyketide_synthase
 
-Help on website
-===============
+Help
+====
 
 We try to make SeMPI as user friendly as possible for such a complex pipeline. Therefore, we assign components which are not absolutely self-explanatory with an  question mark. Which upon hovering, displays additional information.
 
