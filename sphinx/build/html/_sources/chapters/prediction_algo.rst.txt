@@ -1,14 +1,24 @@
 Prediction
 ############
 
-Overview
-========
+Gene prediction
+===============
 
-.. figure:: img/prediction.svg
-   :scale: 50 %
-   :alt: prediction
+If only DNA data is provided, the genes are
+predicted using Prodigal (https://github.com/hyattpd/Prodigal). 
+If the genes are already assigned, SeMPI can try to parse the genes and
+use them for further analysis.
 
-   Flow chart of the prediction pipeline.
+Domain detection
+==================
+
+The detection of relevant domains in the predicted proteins is performed using profile hidden Markov models (profile-HMMs) 
+created with HMMER 3.0. The following proteins are detected: 
+
+.. csv-table:: HMM profiles used for domain detection
+   :header: "Domain", "Full name", "F1-score", "HMM detection threshold (domT)"
+   :widths: 5, 10, 5, 5
+   :file: tables/hmm_domains.csv
 
 Curration (1)
 =============
@@ -29,12 +39,3 @@ The data frame is curated and modified in order to prepare the BGC module detect
 (d) Sometimes the HMM algorithm detects two domains behind each other instead of one domain, these domains are automatically joined to one domain.
 
 
-Protein prediction
-==================
-
-The detection of relevant proteins in the genes is performed using profile hidden Markov models (pHMMs) created with HMMER 3.0. This step is common to most prediction tools at present. But as HMMER 3.0 is the state-of-the-art for sensitive sequence homologue detection, there is no reason to reinvent the wheel. Nevertheless, SeMPI uses its own profiles created with in-house sequence databases. The following proteins are detected: 
-
-.. csv-table:: HMM profiles used for domain detection
-   :header: "Full name", "Abbrev.", "Remark"
-   :widths: 5, 5, 10
-   :file: tables/hmm_domains.csv

@@ -42,89 +42,148 @@
             
   <div class="section" id="prediction">
 <h1>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="id1">
-<a class="reference internal image-reference" href="../_images/prediction.svg"><img alt="prediction" height="6624" src="../_images/prediction.svg" width="4560" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Flow chart of the prediction pipeline.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<div class="section" id="gene-prediction">
+<h2>Gene prediction<a class="headerlink" href="#gene-prediction" title="Permalink to this headline">¶</a></h2>
+<p>If only DNA data is provided, the genes are
+predicted using Prodigal (<a class="reference external" href="https://github.com/hyattpd/Prodigal">https://github.com/hyattpd/Prodigal</a>).
+If the genes are already assigned, SeMPI can try to parse the genes and
+use them for further analysis.</p>
 </div>
+<div class="section" id="domain-detection">
+<h2>Domain detection<a class="headerlink" href="#domain-detection" title="Permalink to this headline">¶</a></h2>
+<p>The detection of relevant domains in the predicted proteins is performed using profile hidden Markov models (profile-HMMs)
+created with HMMER 3.0. The following proteins are detected:</p>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">HMM profiles used for domain detection</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Domain</p></th>
+<th class="head"><p>Full name</p></th>
+<th class="head"><p>F1-score</p></th>
+<th class="head"><p>HMM detection threshold (domT)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ACP</p></td>
+<td><p>Acyl carrier protein</p></td>
+<td><p>0.96</p></td>
+<td><p>13.9</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT</p></td>
+<td><p>Acyltransferase</p></td>
+<td><p>1</p></td>
+<td><p>47.4</p></td>
+</tr>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>Adenylation domain</p></td>
+<td><p>1</p></td>
+<td><p>19.6</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAL</p></td>
+<td><p>Coenzyme A ligase</p></td>
+<td><p>0.94</p></td>
+<td><p>221.8</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>Condensation domain</p></td>
+<td><p>1</p></td>
+<td><p>25.9</p></td>
+</tr>
+<tr class="row-odd"><td><p>DH2</p></td>
+<td><p>Dehydratase</p></td>
+<td><p>0.98</p></td>
+<td><p>33.2</p></td>
+</tr>
+<tr class="row-even"><td><p>DH</p></td>
+<td><p>Dehydratase</p></td>
+<td><p>0.99</p></td>
+<td><p>31.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>DHt</p></td>
+<td><p>Dehydratase</p></td>
+<td><p>0.88</p></td>
+<td><p>44.3</p></td>
+</tr>
+<tr class="row-even"><td><p>ER</p></td>
+<td><p>Enoylreductase</p></td>
+<td><p>1</p></td>
+<td><p>68.8</p></td>
+</tr>
+<tr class="row-odd"><td><p>E</p></td>
+<td><p>Epimerization domain</p></td>
+<td><p>1</p></td>
+<td><p>60.4</p></td>
+</tr>
+<tr class="row-even"><td><p>KR</p></td>
+<td><p>Ketoreductase</p></td>
+<td><p>1</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>KS</p></td>
+<td><p>Keto-synthase</p></td>
+<td><p>1</p></td>
+<td><p>72</p></td>
+</tr>
+<tr class="row-even"><td><p>PCP</p></td>
+<td><p>Peptide carrier protein</p></td>
+<td><p>0.97</p></td>
+<td><p>21.9</p></td>
+</tr>
+<tr class="row-odd"><td><p>TD</p></td>
+<td><p>Reductive Thioesterase</p></td>
+<td><p>1</p></td>
+<td><p>42.1</p></td>
+</tr>
+<tr class="row-even"><td><p>TE</p></td>
+<td><p>Thioesterase</p></td>
+<td><p>1</p></td>
+<td><p>36.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>bACP</p></td>
+<td><p>β-branching acyl carrier protein</p></td>
+<td><p>0.59</p></td>
+<td><p>28.9</p></td>
+</tr>
+<tr class="row-even"><td><p>cMT</p></td>
+<td><p>C-Methyltransferase</p></td>
+<td><p>1</p></td>
+<td><p>104.7</p></td>
+</tr>
+<tr class="row-odd"><td><p>nMT</p></td>
+<td><p>N-Methyltransferase</p></td>
+<td><p>0.99</p></td>
+<td><p>42.7</p></td>
+</tr>
+<tr class="row-even"><td><p>oMT</p></td>
+<td><p>O-Methyltransferase</p></td>
+<td><p>0.99</p></td>
+<td><p>70.6</p></td>
+</tr>
+<tr class="row-odd"><td><p>tATd</p></td>
+<td><p>Trans-acyltransferase docking domain</p></td>
+<td><p>0.98</p></td>
+<td><p>50</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="curration-1">
 <h2>Curration (1)<a class="headerlink" href="#curration-1" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id2">
 <span id="df-processing"></span><a class="reference internal image-reference" href="../_images/df_processing.svg"><img alt="prediction" src="../_images/df_processing.svg" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Curration steps: (a) Block generation, (b) Domain reordering, (c) Domain overlap removal, (d) Domain doublication joining.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Curration steps: (a) Block generation, (b) Domain reordering, (c) Domain overlap removal, (d) Domain doublication joining.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>After the protein detection the genome is converted into a data frame (pandas), which simplifies the subsequent operations. Additional, pandas allows to apply vectorized functions, which speeds up the prediction pipeline. A mysql dump of the data frame is provided with the final output.</p>
-<p>The data frame is curated and modified in order to prepare the BGC module detection (see Example <a class="reference internal" href="#df-processing"><span class="std std-numref">Fig. 5</span></a>).
+<p>The data frame is curated and modified in order to prepare the BGC module detection (see Example <a class="reference internal" href="#df-processing"><span class="std std-numref">Fig. 4</span></a>).
 (a) Close genes (&lt;= 5000bp) which encode proteins on the same strand are combined into blocks. A detailed observation of the MIBiG annotated NRPS and PKS clusters showed, that for this condition the co-linearity principle applies for the very most cases.
 (b) The domains are ordered based on the occurrence in the genome, but for module assignment it is more useful to order the domains based on the occurrence in the block, therefore an additional index is assigned based on the block order.
 (c) In very rare cases the detected protein domains overlap. This can be the case especially for very short sequences (for example the ACP domain). If the domains overlap to more then 20% the domain with the lower bitscore is removed.
 (d) Sometimes the HMM algorithm detects two domains behind each other instead of one domain, these domains are automatically joined to one domain.</p>
-</div>
-<div class="section" id="protein-prediction">
-<h2>Protein prediction<a class="headerlink" href="#protein-prediction" title="Permalink to this headline">¶</a></h2>
-<p>The detection of relevant proteins in the genes is performed using profile hidden Markov models (pHMMs) created with HMMER 3.0. This step is common to most prediction tools at present. But as HMMER 3.0 is the state-of-the-art for sensitive sequence homologue detection, there is no reason to reinvent the wheel. Nevertheless, SeMPI uses its own profiles created with in-house sequence databases. The following proteins are detected:</p>
-<table class="colwidths-given docutils align-default" id="id3">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">HMM profiles used for domain detection</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Full name</p></th>
-<th class="head"><p>Abbrev.</p></th>
-<th class="head"><p>Remark</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>acyl carrier protein / peptidyl carrier proteins</p></td>
-<td><p>ACP/PCP</p></td>
-<td><p>ACP and PCP are detected using the same profile, but are subsequently assigned depending on the module where they occure.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Acetyltransferase</p></td>
-<td><p>AT</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Keto-synthase</p></td>
-<td><p>KS</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Dehydratase</p></td>
-<td><p>DH</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Enoylreductase</p></td>
-<td><p>ER</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Ketoreductase</p></td>
-<td><p>KR</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Methyltransferase</p></td>
-<td><p>MT</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Thioesterase</p></td>
-<td><p>TE</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Condensation domain</p></td>
-<td><p>C</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Epimerization domain</p></td>
-<td><p>E</p></td>
-<td><p>This domain is detected with the same pHMM as the condensation domain, but subsequently changed when positioned behind another condensation domain.</p></td>
-</tr>
-<tr class="row-even"><td><p>Adenylation domain</p></td>
-<td><p>A</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 
@@ -141,9 +200,9 @@
 <li class="toctree-l1"><a class="reference internal" href="primer.html">Primer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genome_input.html">Genome input</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Prediction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gene-prediction">Gene prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#domain-detection">Domain detection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#curration-1">Curration (1)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#protein-prediction">Protein prediction</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="genome_browser.html">Genome browser</a></li>

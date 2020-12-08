@@ -1,11 +1,20 @@
-acyl carrier protein / peptidyl carrier proteins,ACP/PCP,"ACP and PCP are detected using the same profile, but are subsequently assigned depending on the module where they occure."
-Acetyltransferase,AT,
-Keto-synthase,KS,
-Dehydratase,DH,
-Enoylreductase,ER,
-Ketoreductase,KR,
-Methyltransferase,MT,
-Thioesterase,TE,
-Condensation domain,C,
-Epimerization domain,E,"This domain is detected with the same pHMM as the condensation domain, but subsequently changed when positioned behind another condensation domain."
-Adenylation domain,A,
+ACP,Acyl carrier protein,0.96,13.9
+AT,Acyltransferase,1,47.4
+A,Adenylation domain,1,19.6
+CAL,Coenzyme A ligase,0.94,221.8
+C,Condensation domain,1,25.9
+DH2,Dehydratase,0.98,33.2
+DH,Dehydratase,0.99,31.1
+DHt,Dehydratase,0.88,44.3
+ER,Enoylreductase,1,68.8
+E,Epimerization domain,1,60.4
+KR,Ketoreductase,1,20
+KS,Keto-synthase ,1,72
+PCP,Peptide carrier protein,0.97,21.9
+TD,Reductive Thioesterase ,1,42.1
+TE,Thioesterase,1,36.5
+bACP,β-branching acyl carrier protein ,0.59,28.9
+cMT,C-Methyltransferase ,1,104.7
+nMT,N-Methyltransferase ,0.99,42.7
+oMT,O-Methyltransferase ,0.99,70.6
+tATd,Trans-acyltransferase docking domain,0.98,50
