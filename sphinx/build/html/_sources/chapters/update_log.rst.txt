@@ -1,6 +1,11 @@
 Updates
 ############
 
+08.12.2020
+==========
+
+SeMPI 2.0 documentation updated for the publication.
+
 23.05.2019
 ==========
 

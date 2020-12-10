@@ -1,3 +1,5 @@
+.. _db_screening:
+
 Database screening
 ##################
 

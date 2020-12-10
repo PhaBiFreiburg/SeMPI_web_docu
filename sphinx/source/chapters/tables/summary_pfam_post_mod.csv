@@ -1,0 +1,35 @@
+Postsynthetic modification;Pfam ID;Description;Correlation
+Glyco;PF00908.16;dTDP-4-dehydrorhamnose 3,5-epimerase;0.67
+Glyco;PF01370.20;NAD dependent epimerase/dehydratase family;0.64
+Glyco;PF03559.13;NDP-hexose 2,3-dehydratase;0.61
+Glyco;PF00201.17;UDP-glucoronosyl and UDP-glucosyl transferase;0.59
+Glyco;PF03033.19;Glycosyltransferase family 28 N-terminal domain;0.56
+Glyco;PF01041.16;DegT/DnrJ/EryC1/StrS aminotransferase family;0.52
+Glyco;PF08421.10;Putative zinc binding domain;0.47
+Glyco;PF16363.4;GDP-mannose 4,6 dehydratase;0.44
+Glyco;PF04101.15;Glycosyltransferase family 28 C-terminal domain;0.28
+Glyco;PF01075.16;Glycosyltransferase family 9 (heptosyltransferase);0.21
+Glyco;PF00728.21;Glycosyl hydrolase family 20, catalytic domain;0.18
+Glyco;PF02838.14;Glycosyl hydrolase family 20, domain 2;0.18
+Glyco;PF01915.21;Glycosyl hydrolase family 3 C-terminal domain;0.13
+Glyco;PF00933.20;Glycosyl hydrolase family 3 N terminal domain;0.13
+Glyco;PF14885.5;Hypothetical glycosyl hydrolase family 15;0.1
+Cl;PF04820.13;Tryptophan halogenase;0.66
+Cl;PF00999.20;Sodium/hydrogen exchanger family;0.51
+Sphingo;PF12680.6;SnoaL-like domain;0.61
+Sphingo;PF00890.23;FAD binding domain;0.54
+SS;PF07992.13;Pyridine nucleotide-disulphide oxidoreductase;0.46
+NO2;PF01678.18;Diaminopimelate epimerase;0.67
+6-Ring;PF16197.4;Ketoacyl-synthetase C-terminal extension;0.53
+6-Ring;PF02801.21;Beta-ketoacyl synthase, C-terminal domain;0.52
+6-Ring;PF08990.10;Erythronolide synthase docking;0.51
+6-Ring;PF00743.18;Flavin-binding monooxygenase-like;0.46
+6-Ring;PF13377.5;Periplasmic binding protein-like domain;0.23
+6-Ring;PF13191.5;AAA ATPase domain;0.23
+5-Ring;PF12680.6;SnoaL-like domain;0.56
+5-Ring;PF00890.23;FAD binding domain;0.53
+5-Ring;PF01551.21;Peptidase family M23;0.46
+5-Ring;PF08990.10;Erythronolide synthase docking;0.45
+5-Ring;PF00486.27;Transcriptional regulatory protein, C terminal;0.26
+5-Ring;PF16197.4;Ketoacyl-synthetase C-terminal extension;0.26
+5-Ring;PF00109.25;Beta-ketoacyl synthase, N-terminal domain;0.25

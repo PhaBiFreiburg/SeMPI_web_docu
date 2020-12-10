@@ -42,15 +42,15 @@
             
   <div class="section" id="genome-input">
 <h1>Genome input<a class="headerlink" href="#genome-input" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="input-form">
-<h2>Input form<a class="headerlink" href="#input-form" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="id1">
+<div class="section" id="upload-form">
+<span id="id1"></span><h2>Upload form<a class="headerlink" href="#upload-form" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../_images/input_form_01.svg"><img alt="input" src="../_images/input_form_01.svg" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Screenshot of the input view.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Screenshot of the input view.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>Upload a gene file (DNA) in FASTA or GeneBank format. Drop and drag is also supported.</p></li>
-<li><p>Its easy to get confused, when multiple files are submitted to the server. Therefore the jobs can be commented, which allows simple identification when the jobs are done. An example could be “interesting genome Number 3”. This field is optional.</p></li>
+<li><p>Its easy to get confused, when multiple files are submitted to the server. Therefore the jobs can be commented, which allows simple identification when the jobs are done. An example could be “interesting genome number 3”. This field is optional.</p></li>
 <li><p>This threshold which defines the maximum distance between functional modules to be detected as one gene cluster.</p></li>
 <li><p>Force the gene prediction algorithm. The genes will be predicted using prodigal, based on the provided DNA. Otherwise the genes will only be predicted if they cannot be found in the input data. Precomputed genes need to be assigned in a GeneBank file using the CDS tag (<a class="reference external" href="https://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html#CDSB">https://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html#CDSB</a>). As SeMPI 2.0 needs the stand side information of the gene (+ or -) for reasonable cluster predictions, files where the strand side is not assigned will automatically lead to a gene prediction (see Example <a class="reference internal" href="#cds-strand"><span class="std std-numref">Fig. 2</span></a>).</p></li>
 <li><p>The screening algorithm uses fingerprints to detect similar compounds in the DBs (this gives already close matches). Of those matches the best N. compounds are used for a stricter screening process using maximum common substructures (MCS). The MCS algorithm can take a while to process, therefore it is recommended to limit the number of compounds selected for this task (see also <a class="reference internal" href="database_screening.html#fp-screen"><span class="std std-ref">Fingerprint screening</span></a>).</p></li>
@@ -59,13 +59,13 @@
 <li><p>The provided files allow for a test run of the web server. They need to be downloaded and can then be used as input file.</p></li>
 <li><p>There are also preprocessed results available.</p></li>
 </ol>
-<div class="figure align-default" id="id2">
+<div class="figure align-default" id="id3">
 <span id="cds-strand"></span><a class="reference internal image-reference" href="../_images/cds_strand.svg"><img alt="input" src="../_images/cds_strand.svg" width="40%" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Example of a GeneBank file with pre-computed genes.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Example of a GeneBank file with pre-computed genes.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="input-format">
-<h2>Input format<a class="headerlink" href="#input-format" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="file-formats">
+<h2>File formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">¶</a></h2>
 <p>SeMPI can work with genome data in FASTA or GenBank format.
 The files can contain multiple records. SeMPI will
 create one result page for each record.
@@ -73,9 +73,10 @@ An example file for both formats can be download from the start page.</p>
 </div>
 <div class="section" id="input-parsing">
 <h2>Input parsing<a class="headerlink" href="#input-parsing" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="id3">
-<a class="reference internal image-reference" href="../_images/input.svg"><img alt="input" src="../_images/input.svg" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Flow chart of the input parsing pipeline. If only DNA data is provided, the genes are predicted using prodigal. If the genes are already assigned (GenBank) SeMPI will try to parse the genes and use them for further analysis. SeMPI can parse multiple records per file, it will create one output for each record.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p>The general workflow of the input processing is shown in <a class="reference internal" href="#input-pro"><span class="std std-numref">Fig. 3</span></a>.</p>
+<div class="figure align-default" id="id4">
+<span id="input-pro"></span><a class="reference internal image-reference" href="../_images/input.svg"><img alt="input" src="../_images/input.svg" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Flow chart of the input parsing pipeline. If only DNA data is provided, the genes are predicted using prodigal. If the genes are already assigned (GenBank) SeMPI will try to parse the genes and use them for further analysis. SeMPI can parse multiple records per file, it will create one output for each record.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -92,8 +93,8 @@ An example file for both formats can be download from the start page.</p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="primer.html">Primer</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Genome input</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#input-form">Input form</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#input-format">Input format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upload-form">Upload form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-formats">File formats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#input-parsing">Input parsing</a></li>
 </ul>
 </li>

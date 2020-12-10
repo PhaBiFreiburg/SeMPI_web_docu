@@ -17,6 +17,7 @@ Welcome to the SeMPI 2.0 documentation
    chapters/prediction_algo
    chapters/genome_browser
    chapters/database_screening
+   chapters/preprocessed_database
 
 Search
 ======
