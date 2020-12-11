@@ -1,3 +1,5 @@
+.. _genome_browser:
+
 Genome browser
 ##############
 

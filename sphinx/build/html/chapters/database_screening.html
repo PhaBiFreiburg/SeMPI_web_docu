@@ -66,23 +66,23 @@ and submit any molecule query to the screening algorithm.</p>
 <h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id2">
 <span id="db-screen"></span><a class="reference internal image-reference" href="../_images/scaffold_screening.svg"><img alt="scaffold_screening" src="../_images/scaffold_screening.svg" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Flow chart of the DB screening pipeline.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Flow chart of the DB screening pipeline.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>The database screening uses a two step approach to identify similar compounds from public DBs (see <a class="reference internal" href="#db-screen"><span class="std std-numref">Fig. 6</span></a>). First, a pre-selection of possible matches are identified using Morgan fingerprints (see <a class="reference internal" href="#fp-screen"><span class="std std-ref">Fingerprint screening</span></a>). Second, the pre-selection is ranked using a Maximum Common Substructure Approach (see <a class="reference internal" href="#mcs-rank"><span class="std std-ref">Maximum Common Substructure Ranking</span></a>). The scaffolds can be modified before submission (see <a class="reference internal" href="#scaffold-mod"><span class="std std-ref">Scaffold modification</span></a>).</p>
+<p>The database screening uses a two step approach to identify similar compounds from public DBs (see <a class="reference internal" href="#db-screen"><span class="std std-numref">Fig. 14</span></a>). First, a pre-selection of possible matches are identified using Morgan fingerprints (see <a class="reference internal" href="#fp-screen"><span class="std std-ref">Fingerprint screening</span></a>). Second, the pre-selection is ranked using a Maximum Common Substructure Approach (see <a class="reference internal" href="#mcs-rank"><span class="std std-ref">Maximum Common Substructure Ranking</span></a>). The scaffolds can be modified before submission (see <a class="reference internal" href="#scaffold-mod"><span class="std std-ref">Scaffold modification</span></a>).</p>
 </div>
 <div class="section" id="scaffold-modification">
 <span id="scaffold-mod"></span><h2>Scaffold modification<a class="headerlink" href="#scaffold-modification" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id3">
 <a class="reference internal image-reference" href="../_images/scaffold_mod_01.png"><img alt="scaffold_mod_01" src="../_images/scaffold_mod_01.png" style="width: 767.5px; height: 365.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">The predicted scaffolds can be modified before submission to the database screening, using the scaffold input button.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">The predicted scaffolds can be modified before submission to the database screening, using the scaffold input button.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id4">
 <a class="reference internal image-reference" href="../_images/scaffold_mod_02.png"><img alt="scaffold_mod_02" src="../_images/scaffold_mod_02.png" style="width: 431.5px; height: 432.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The JSME editor allows all kinds of modifications of the predicted scaffold.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">The JSME editor allows all kinds of modifications of the predicted scaffold.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id5">
 <a class="reference internal image-reference" href="../_images/scaffold_mod_03.png"><img alt="scaffold_mod_03" src="../_images/scaffold_mod_03.png" style="width: 392.5px; height: 417.5px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Additional building blocks or post-modifications can be added to the original prediction.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Additional building blocks or post-modifications can be added to the original prediction.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>The scaffold modification can be performed using the <a class="reference external" href="https://peter-ertl.com/jsme/2013_03/help.html">JSME Molecule Editor</a>, a very powerful editor, which allows to add new molecules and modify the
 original prediction.</p>
@@ -117,10 +117,10 @@ This allows SeMPI to match correct scaffolds also of clusters where only fragmen
 <p>Even though the FP screening collects very close matches to the predicted scaffolds,
 some properties cannot be matched accurately with FPs.
 For example the order of building blocks cannot be represented correctly even by count vectors.
-Similar building blocks in different order can lead to wrong ranking solely based on fingerprints (see <a class="reference internal" href="#fp-example"><span class="std std-numref">Fig. 10</span></a>). Therefore an MCS based ranking is applied to the pre-selected molecules.</p>
+Similar building blocks in different order can lead to wrong ranking solely based on fingerprints (see <a class="reference internal" href="#fp-example"><span class="std std-numref">Fig. 18</span></a>). Therefore an MCS based ranking is applied to the pre-selected molecules.</p>
 <div class="figure align-default" id="id6">
 <span id="fp-example"></span><a class="reference internal image-reference" href="../_images/fp_based_search_example.png"><img alt="../_images/fp_based_search_example.png" src="../_images/fp_based_search_example.png" style="width: 748.0px; height: 384.5px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Hypothetical screening of two building blocks of two alanine (block 0) and one serine (block 1) against
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Hypothetical screening of two building blocks of two alanine (block 0) and one serine (block 1) against
 an two peptides (A-A-S) and (A-S-A). The peptide with the correct order of building blocks gets a lower similarity score (based on FPs), whereas the ConfS scores (based on MCS) represents the expected ranking.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>The maximum common substructure (MCS) algorithm ranks the pre-selection based on the
@@ -128,7 +128,7 @@ best MCS score for each scaffold fragment with the target
 molecules.</p>
 <div class="figure align-default" id="id7">
 <span id="mcs-algo"></span><a class="reference internal image-reference" href="../_images/MCS_algo.svg"><img alt="../_images/MCS_algo.svg" src="../_images/MCS_algo.svg" /></a>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Example demonstration of the MCS algorithm. To simplify the example only two building blocks are used, the algorithm can potentially scale up to 10 building blocks. (1) Initially the building blocks are ordered by their number of atoms. The matches of the biggest building blocks are most meaning-full. (2) All MCS of the first block (B1) with the target molecule (Mol) are computed. The example shows only one MCS, but some molecules (especially ring systems) can have large amounts of MCS. The number of MCS to find for each B1 in a Mol are limited to 20. A new molecule is created for each MCS, where the MCS is removed from the scaffold. This new molecule is then submitted to a new MCS search with the next building block (B2).</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Example demonstration of the MCS algorithm. To simplify the example only two building blocks are used, the algorithm can potentially scale up to 10 building blocks. (1) Initially the building blocks are ordered by their number of atoms. The matches of the biggest building blocks are most meaning-full. (2) All MCS of the first block (B1) with the target molecule (Mol) are computed. The example shows only one MCS, but some molecules (especially ring systems) can have large amounts of MCS. The number of MCS to find for each B1 in a Mol are limited to 20. A new molecule is created for each MCS, where the MCS is removed from the scaffold. This new molecule is then submitted to a new MCS search with the next building block (B2).</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -145,6 +145,8 @@ molecules.</p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="primer.html">Primer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genome_input.html">Genome input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="result_page.html">Result page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output_files.html">Generated project files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prediction_algo.html">Prediction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genome_browser.html">Genome browser</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Database screening</a><ul>

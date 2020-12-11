@@ -14,6 +14,8 @@ Welcome to the SeMPI 2.0 documentation
 
    chapters/primer
    chapters/genome_input
+   chapters/result_page
+   chapters/output_files
    chapters/prediction_algo
    chapters/genome_browser
    chapters/database_screening

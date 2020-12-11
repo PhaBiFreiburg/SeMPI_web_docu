@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genome browser &#8212; SeMPI 2.0 documentation</title>
+    <title>Result page &#8212; SeMPI 2.0 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Database screening" href="database_screening.html" />
-    <link rel="prev" title="Prediction" href="prediction_algo.html" /> 
+    <link rel="next" title="Generated project files" href="output_files.html" />
+    <link rel="prev" title="Genome input" href="genome_input.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -25,13 +25,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="database_screening.html" title="Database screening"
+          <a href="output_files.html" title="Generated project files"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="prediction_algo.html" title="Prediction"
+          <a href="genome_input.html" title="Genome input"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Genome browser</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Result page</a></li> 
       </ul>
     </div>  
 
@@ -40,38 +40,19 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="genome-browser">
-<span id="id1"></span><h1>Genome browser<a class="headerlink" href="#genome-browser" title="Permalink to this headline">¶</a></h1>
-<p>In order to allow a graphical view of the genome and the clusters a genome browser is incorporated into SeMPI. The browser visualizes the genes (CSD), biosynthetic gene cluster (BGC) relevant domains, modules, blocks and clusters together in a simple to user browser. For a detailed explanation please see the <a class="reference external" href="http://d3gb.usal.es/help/index.html">D3 Genome Browser D3GB</a>
-help page.</p>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../_images/genome_browser_01.svg"><img alt="genome_browser_01" src="../_images/genome_browser_01.svg" /></a>
+  <div class="section" id="result-page">
+<h1>Result page<a class="headerlink" href="#result-page" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default" id="id1">
+<span id="res-example"></span><img alt="results" src="../_images/results_page.png" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Overview of the results page.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
-<li><p>The genome browser is available for the entire analyzed genome.</p></li>
-<li><p>But the browser can also be limited to the predicted cluster  (2) (and 10000bp of its surrounding).</p></li>
+<li><p>The uploaded file.</p></li>
+<li><p>The record. Can be changed by clicking on the links above (4)</p></li>
+<li><p>A comment for identification which can be chosen in the input form.</p></li>
+<li><p>A link to the genome browser which is further explained in <a class="reference internal" href="genome_browser.html#genome-browser"><span class="std std-ref">Genome browser</span></a>.</p></li>
+<li><p>The generated files for the genome can be downloaded. The folder set-up is explained in <a class="reference internal" href="output_files.html#output-files"><span class="std std-ref">Generated project files</span></a>.</p></li>
 </ol>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../_images/genome_browser_02.svg"><img alt="genome_browser_02" src="../_images/genome_browser_02.svg" /></a>
-</div>
-<p>When directed to the genome browser, the entire genome is shown as a bar.</p>
-<ol class="arabic simple">
-<li><p>The initial area to display can be selected.</p></li>
-<li><p>The “Go to” button directs you to the detail view.</p></li>
-</ol>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../_images/genome_browser_03.svg"><img alt="genome_browser_03" src="../_images/genome_browser_03.svg" /></a>
-</div>
-<ol class="arabic simple">
-<li><p>The browser visualizes the genes (CDS), biosynthetic gene cluster (BGC) relevant domains, modules, blocks and clusters.</p></li>
-<li><p>The figure can be exported in multiple formats.</p></li>
-<li><p>The area of display can be expanded/changed and contracted using the top panel.</p></li>
-<li><p>By clicking on the side panel text, the block can be collapsed, which is useful when too many genes/domains are shown (if the entire genome is shown thousands of genes might be displayed).</p></li>
-<li><p>By clicking on the field of interest additional informations are displayed.</p></li>
-</ol>
-</div>
 </div>
 
 
@@ -86,13 +67,10 @@ help page.</p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="primer.html">Primer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genome_input.html">Genome input</a></li>
-<li class="toctree-l1"><a class="reference internal" href="result_page.html">Result page</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Result page</a></li>
 <li class="toctree-l1"><a class="reference internal" href="output_files.html">Generated project files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prediction_algo.html">Prediction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Genome browser</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="genome_browser.html">Genome browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="database_screening.html">Database screening</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preprocessed_database.html">Preprocessed Database</a></li>
 </ul>
@@ -102,11 +80,11 @@ help page.</p>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="prediction_algo.html"
-                        title="previous chapter">Prediction</a></p>
+  <p class="topless"><a href="genome_input.html"
+                        title="previous chapter">Genome input</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="database_screening.html"
-                        title="next chapter">Database screening</a></p>
+  <p class="topless"><a href="output_files.html"
+                        title="next chapter">Generated project files</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -128,13 +106,13 @@ help page.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="database_screening.html" title="Database screening"
+          <a href="output_files.html" title="Generated project files"
              >next</a> |</li>
         <li class="right" >
-          <a href="prediction_algo.html" title="Prediction"
+          <a href="genome_input.html" title="Genome input"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">SeMPI 2.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Genome browser</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Result page</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
