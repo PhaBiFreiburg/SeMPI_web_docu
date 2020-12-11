@@ -3,7 +3,7 @@ Primer
 ######
 
 This is the help page of the `SeMPI 2.0 web server <http://sempi.pharmazie.uni-freiburg.de/index>`_.
-If you feel there is anything missing or we should include something at this help page please write a mail to:
+If you feel there is anything missing or we should include something at this help page please write an email to:
 paul.zierep@pharmazie.uni-freiburg.de 
 
 
@@ -38,7 +38,7 @@ PKs with a subsequent database screening of the prediction in the StreptomeDB 3.
 SeMPI 2.0 was completed revised and uses its own gene cluster prediction logic. The main improvements are: 
 
 #. Benchmarked and refined profile-HMMs used for domain detection (see :ref:`domain_detection`).
-#. Improved gene cluster curration: removal of overlapping domains and combining of duplicated domains (see :ref:`bgc_curration`).
+#. Improved gene cluster curation: removal of overlapping domains and combining of duplicated domains (see :ref:`bgc_curration`).
 #. Additional prediction of NRPs.
 #. PK and NRP substrate specificity prediction using random forest classifiers.
 #. NRP substrate prediction based on a classifier trained with more than 2.000 samples.

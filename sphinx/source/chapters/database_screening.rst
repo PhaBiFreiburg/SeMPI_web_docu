@@ -39,7 +39,7 @@ Algorithm
    Flow chart of the DB screening pipeline.
 
 The database screening uses a two step approach to identify similar compounds from public DBs (see :numref:`db-screen`). First, a preselection of possible matches are identified using Morgan fingerprints (see :ref:`fp_screen`). 
-Second, the preselection is ranked using a ensemble scoring function which includes the Tanimoto simiarity score, 
+Second, the preselection is ranked using a ensemble scoring function which includes the Tanimoto similarity score, 
 a maximum common substructure-base score (see :ref:`mcs_rank`) and a postsynthetic modifications score
 
 .. _scaffold_mod:
@@ -112,16 +112,16 @@ Even though the fingerprint screening collects very close matches to the predict
 some properties cannot be matched accurately with Morgan fingerprints.
 For example the order of building blocks cannot be represented correctly even by count vectors.
 Similar building blocks in different order can lead to wrong ranking solely based on fingerprints (see :numref:`fp_example`). 
-Therefore an score was desinged which represents the influence of 
+Therefore an score was designed which represents the influence of 
 
-#. the Tanimoto simiarity score
+#. the Tanimoto similarity score
 #. maximum common substructure-base score (see :ref:`mcs_rank`)
 #. postsynthetic modifications score
 
-The combined score is refered to as metabolite score.
+The combined score is referred to as metabolite score.
 The database screening of the predicted scaffold can be ranked based on any of the individual scores (see :numref:`scoring`).
 For example one could prefer to get target matches where the postsynthetic modifications match excactly.
-But in benchmarking anaylsis, the metabolite score led to the best ranking of the natural products.
+But in benchmarking analysis, the metabolite score led to the best ranking of the natural products.
 
 .. _scoring:
 
