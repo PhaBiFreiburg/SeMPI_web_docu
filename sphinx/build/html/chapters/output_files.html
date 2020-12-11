@@ -42,27 +42,27 @@
             
   <div class="section" id="generated-project-files">
 <span id="output-files"></span><h1>Generated project files<a class="headerlink" href="#generated-project-files" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-default" id="res-example">
+<div class="figure align-default" id="res-example1">
 <img alt="results" src="../_images/tree1.jpg" />
 </div>
 <p>The ‘.db’ files are MySQL dumps of the DataFrames generated for the gene cluster.
 The can be observed with various programs such as <a class="reference external" href="https://www.sqlite.org/index.html">SQLlite</a>).</p>
 <ol class="arabic simple">
-<li><p>cluster_df.db contains all infos about the detected gene clusters.</p></li>
-<li><p>cluster_scoring_df.db contains all infos about the natural product screening.</p></li>
-<li><p>gbk_df.db contains all infos about the detected domains.</p></li>
-<li><p>meta_df.db contains all meta infos such as file name and description.</p></li>
+<li><p>cluster_df.db contains all information about the detected gene clusters.</p></li>
+<li><p>cluster_scoring_df.db contains all information about the natural product screening.</p></li>
+<li><p>gbk_df.db contains all information about the detected domains.</p></li>
+<li><p>meta_df.db contains all meta information such as file name and description.</p></li>
 </ol>
 <p>The folder cluster_gbks contains annotated GBK files for each cluster.</p>
 <p>The figures folder contains images of the compounds from the natural product screening.
 Each figure corresponds to one compound listed in cluster_scoring_df.db.</p>
-<div class="figure align-default" id="id1">
+<div class="figure align-default" id="res-example2">
 <img alt="results" src="../_images/tree2.jpg" />
 </div>
 <p>The genes_genome.gbk is a minimal annotation of the genome (only includes predicted domains).
 The final_genome.gbk is a complete annotation of the genome (included domains, modules, cluster …).</p>
 <p>The genome browser folder allows to run the genome browser locally.
-This only work when a server is simulated. This can be done with python:
+This only works when a server is simulated. This can be done with python:
 Just run:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span> <span class="mi">8000</span>
 </pre></div>
@@ -71,7 +71,7 @@ Just run:</p>
 And then open <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> in any browser.</p>
 <p>An additional “old” genome_diagram as PDF is also included.</p>
 <p>The hmmer_output folder contains all hmmer results for each domain.</p>
-<div class="figure align-default" id="id2">
+<div class="figure align-default" id="res-example3">
 <img alt="results" src="../_images/tree3.jpg" />
 </div>
 <p>The prodigal_output folder contains all the results of the Prodigal gene prediction.</p>

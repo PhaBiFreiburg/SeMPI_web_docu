@@ -45,21 +45,21 @@
 <p>SeMPI allows to screen publicly available natural compound databases (DBs).
 The query can be the predicted scaffolds of a cluster, a user defined modification of
 scaffolds or a totally user defined set of molecules.</p>
-<p>The DB screening is not limited to one scaffold. SeMPI can predict multiple fragment-scaffolds for one cluster (in case the order of the blocks cannot be determined). The screening therefore allows to submit multiple scaffolds for one query.</p>
-<p>Additionally to the pre-computed DBs, the user can upload custom defined DBs in SDF or SMILES format.</p>
+<p>The DB screening is not limited to one scaffold. SeMPI can predict multiple fragment-scaffolds for one cluster (in case the order of the blocks cannot be determined). The screening allows to submit multiple scaffolds for one query.</p>
+<p>Additionally to the precomputed DBs, the user can upload custom defined DBs in SDF or SMILES format.</p>
 <p>The database screening can also be performed for user defined molecules and molecule sets,
 entirely without preliminarily prediction.
-Just follow the “scaffold upload” button
-<a class="reference external" href="http://132.230.102.133/scaffold_upload">Scaffold upload</a>
+Just follow the
+<a class="reference external" href="http://sempi.pharmazie.uni-freiburg.de/scaffold_upload">Scaffold upload</a>
 and submit any molecule query to the screening algorithm.</p>
 <div class="section" id="use-cases">
 <h2>Use cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
 <p>The database (DB) screening allows users:</p>
 <ol class="arabic simple">
-<li><p>to estimate the novelty of their gene clusters (a scaffold which does not match similar scaffolds in known databases, is very likely a novel cluster)</p></li>
-<li><p>the identification of possible post-modifications, which cannot be detected by prediction algorithms yet</p></li>
-<li><p>the identification of similar clusters (based on the product)</p></li>
-<li><p>the matching of custom defined molecules in a genome (using the scaffold upload tool)</p></li>
+<li><p>to estimate the novelty of their gene clusters (a scaffold which does not match similar scaffolds in known databases, is potentially a novel cluster).</p></li>
+<li><p>the identification of possible postsynthetic modifications, that cannot be detected by prediction algorithms yet.</p></li>
+<li><p>the identification of similar clusters (based on the product).</p></li>
+<li><p>the matching of custom defined molecules in a genome (using the scaffold upload tool).</p></li>
 </ol>
 </div>
 <div class="section" id="algorithm">
@@ -68,7 +68,9 @@ and submit any molecule query to the screening algorithm.</p>
 <span id="db-screen"></span><a class="reference internal image-reference" href="../_images/scaffold_screening.svg"><img alt="scaffold_screening" src="../_images/scaffold_screening.svg" /></a>
 <p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Flow chart of the DB screening pipeline.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>The database screening uses a two step approach to identify similar compounds from public DBs (see <a class="reference internal" href="#db-screen"><span class="std std-numref">Fig. 14</span></a>). First, a pre-selection of possible matches are identified using Morgan fingerprints (see <a class="reference internal" href="#fp-screen"><span class="std std-ref">Fingerprint screening</span></a>). Second, the pre-selection is ranked using a Maximum Common Substructure Approach (see <a class="reference internal" href="#mcs-rank"><span class="std std-ref">Maximum Common Substructure Ranking</span></a>). The scaffolds can be modified before submission (see <a class="reference internal" href="#scaffold-mod"><span class="std std-ref">Scaffold modification</span></a>).</p>
+<p>The database screening uses a two step approach to identify similar compounds from public DBs (see <a class="reference internal" href="#db-screen"><span class="std std-numref">Fig. 14</span></a>). First, a preselection of possible matches are identified using Morgan fingerprints (see <a class="reference internal" href="#fp-screen"><span class="std std-ref">Fingerprint screening</span></a>).
+Second, the preselection is ranked using a ensemble scoring function which includes the Tanimoto simiarity score,
+a maximum common substructure-base score (see <a class="reference internal" href="#mcs-rank"><span class="std std-ref">Combined score ranking</span></a>) and a postsynthetic modifications score</p>
 </div>
 <div class="section" id="scaffold-modification">
 <span id="scaffold-mod"></span><h2>Scaffold modification<a class="headerlink" href="#scaffold-modification" title="Permalink to this headline">¶</a></h2>
@@ -82,54 +84,68 @@ and submit any molecule query to the screening algorithm.</p>
 </div>
 <div class="figure align-default" id="id5">
 <a class="reference internal image-reference" href="../_images/scaffold_mod_03.png"><img alt="scaffold_mod_03" src="../_images/scaffold_mod_03.png" style="width: 392.5px; height: 417.5px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Additional building blocks or post-modifications can be added to the original prediction.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Additional building blocks or postsynthetic modifications can be added to the original prediction.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>The scaffold modification can be performed using the <a class="reference external" href="https://peter-ertl.com/jsme/2013_03/help.html">JSME Molecule Editor</a>, a very powerful editor, which allows to add new molecules and modify the
 original prediction.</p>
 </div>
 <div class="section" id="custom-db-input-format">
 <span id="custom-db"></span><h2>Custom DB input format<a class="headerlink" href="#custom-db-input-format" title="Permalink to this headline">¶</a></h2>
-<p>The custom DB choice allows to upload a file with user defined target molecules which can be screened additionally to the default DB choices. It is also possible to screen only a user defined DB, just untick
+<p>The custom DB choice allows to upload a file with user defined target molecules which can be screened additionally to the default DB choices. It is also possible to screen only a user-defined DB, just untick
 all the default DB choices before submission.</p>
 <p>The format for the custom DB must be either SDF or SMILES format.
-Examples of both input types can be downloaded from the <a class="reference external" href="http://132.230.102.133/scaffold_upload">Scaffold upload</a> page, at the bottom. These files simply contain a benzene and phenol structure which be used to
+Examples of both input types can be downloaded from the <a class="reference external" href="http://sempi.pharmazie.uni-freiburg.de/scaffold_upload">Scaffold upload</a> page, at the bottom. These files simply contain a benzene and phenol structure which can be used to
 test the scaffold screening.</p>
 <p>One simple way to understand the screening pipeline could be to download one of the example input files. And screen them for a custom drawn structure.</p>
 </div>
 <div class="section" id="fingerprint-screening">
 <span id="fp-screen"></span><h2>Fingerprint screening<a class="headerlink" href="#fingerprint-screening" title="Permalink to this headline">¶</a></h2>
 <p>The selected DBs are screened using molecular fingerprints (FP). For the screening the rdkit implementation
-of Morgan FPs (Circular FPs) were chosen (<a class="reference external" href="https://www.rdkit.org/docs/GettingStartedInPython.html#fingerprinting-and-molecular-similarity">Morgan Fingerprints</a>).
-Specifically a Morgan FB with radius 3 and features is implemented.</p>
+of Morgan fingerprints are used (<a class="reference external" href="https://www.rdkit.org/docs/GettingStartedInPython.html#fingerprinting-and-molecular-similarity">Morgan Fingerprints</a>).</p>
 <p>In many cases the scaffolds of PKs and NRPs contain the same building blocks multiple times.
-This property can not
-be accurately represented by bit fingerprints. Multiple identical building blocks set the same bits (and
+This property can not be accurately represented by bit fingerprints. Multiple identical building blocks set the same bits (and
 bits are only set ones), which leads to similar fingerprints for scaffolds with different amounts of identical building blocks.
 Therefore, the FPs are implemented as count vectors, which distinguish molecules also based on the amount of present
 bits.</p>
-<p>For count vectors the similarity metric is calculated using dice similarity instead of Tanimoto coefficient.</p>
-<p>If multiple scaffolds are submitted a joint FP is computed for all scaffolds.
+<p>If multiple scaffolds are submitted a joint fingerprint is computed for all scaffolds.
 This allows SeMPI to match correct scaffolds also of clusters where only fragments could be predicted.</p>
-<p>The FP screening only creates a pre-selection of possible scaffold matches (default 50).</p>
+<p>The fingerprint screening creates a preselection of possible scaffold matches (default: 50).</p>
 </div>
-<div class="section" id="maximum-common-substructure-ranking">
-<span id="mcs-rank"></span><h2>Maximum Common Substructure Ranking<a class="headerlink" href="#maximum-common-substructure-ranking" title="Permalink to this headline">¶</a></h2>
-<p>Even though the FP screening collects very close matches to the predicted scaffolds,
-some properties cannot be matched accurately with FPs.
+<div class="section" id="combined-score-ranking">
+<span id="mcs-rank"></span><h2>Combined score ranking<a class="headerlink" href="#combined-score-ranking" title="Permalink to this headline">¶</a></h2>
+<p>Even though the fingerprint screening collects very close matches to the predicted scaffolds,
+some properties cannot be matched accurately with Morgan fingerprints.
 For example the order of building blocks cannot be represented correctly even by count vectors.
-Similar building blocks in different order can lead to wrong ranking solely based on fingerprints (see <a class="reference internal" href="#fp-example"><span class="std std-numref">Fig. 18</span></a>). Therefore an MCS based ranking is applied to the pre-selected molecules.</p>
-<div class="figure align-default" id="id6">
-<span id="fp-example"></span><a class="reference internal image-reference" href="../_images/fp_based_search_example.png"><img alt="../_images/fp_based_search_example.png" src="../_images/fp_based_search_example.png" style="width: 748.0px; height: 384.5px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Hypothetical screening of two building blocks of two alanine (block 0) and one serine (block 1) against
-an two peptides (A-A-S) and (A-S-A). The peptide with the correct order of building blocks gets a lower similarity score (based on FPs), whereas the ConfS scores (based on MCS) represents the expected ranking.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+Similar building blocks in different order can lead to wrong ranking solely based on fingerprints (see <code class="xref std std-numref docutils literal notranslate"><span class="pre">fp_example</span></code>).
+Therefore an score was desinged which represents the influence of</p>
+<ol class="arabic simple">
+<li><p>the Tanimoto simiarity score</p></li>
+<li><p>maximum common substructure-base score (see <a class="reference internal" href="#mcs-rank"><span class="std std-ref">Combined score ranking</span></a>)</p></li>
+<li><p>postsynthetic modifications score</p></li>
+</ol>
+<p>The combined score is refered to as metabolite score.
+The database screening of the predicted scaffold can be ranked based on any of the individual scores (see <a class="reference internal" href="#scoring"><span class="std std-numref">Fig. 18</span></a>).
+For example one could prefer to get target matches where the postsynthetic modifications match excactly.
+But in benchmarking anaylsis, the metabolite score led to the best ranking of the natural products.</p>
+<div class="figure align-default" id="scoring">
+<img alt="../_images/scoring.jpg" src="../_images/scoring.jpg" />
 </div>
+</div>
+<div class="section" id="maximum-common-substructure-score">
+<h2>Maximum common substructure score<a class="headerlink" href="#maximum-common-substructure-score" title="Permalink to this headline">¶</a></h2>
 <p>The maximum common substructure (MCS) algorithm ranks the pre-selection based on the
 best MCS score for each scaffold fragment with the target
 molecules.</p>
-<div class="figure align-default" id="id7">
-<span id="mcs-algo"></span><a class="reference internal image-reference" href="../_images/MCS_algo.svg"><img alt="../_images/MCS_algo.svg" src="../_images/MCS_algo.svg" /></a>
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Example demonstration of the MCS algorithm. To simplify the example only two building blocks are used, the algorithm can potentially scale up to 10 building blocks. (1) Initially the building blocks are ordered by their number of atoms. The matches of the biggest building blocks are most meaning-full. (2) All MCS of the first block (B1) with the target molecule (Mol) are computed. The example shows only one MCS, but some molecules (especially ring systems) can have large amounts of MCS. The number of MCS to find for each B1 in a Mol are limited to 20. A new molecule is created for each MCS, where the MCS is removed from the scaffold. This new molecule is then submitted to a new MCS search with the next building block (B2).</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<div class="figure align-default" id="mcs-algo">
+<a class="reference internal image-reference" href="../_images/MCS_algo.svg"><img alt="../_images/MCS_algo.svg" src="../_images/MCS_algo.svg" /></a>
 </div>
+<p>Example demonstration of the MCS algorithm. To simplify the example only two building blocks are used, the algorithm can potentially scale up to 10 building blocks. (1) Initially the building blocks are ordered by their number of atoms. The matches of the biggest building blocks are most meaning-full. (2) All MCS of the first block (B1) with the target molecule (Mol) are computed. The example shows only one MCS, but some molecules (especially ring systems) can have large amounts of MCS. The number of MCS to find for each B1 in a Mol are limited to 20. A new molecule is created for each MCS, where the MCS is removed from the scaffold. This new molecule is then submitted to a new MCS search with the next building block (B2).</p>
+</div>
+<div class="section" id="postsynthetic-modifications-score">
+<h2>Postsynthetic modifications score<a class="headerlink" href="#postsynthetic-modifications-score" title="Permalink to this headline">¶</a></h2>
+<p>The postsynthetic modifications score matches the number of each
+predicted postsynthetic modifications with the number of postsynthetic modifications
+found in the target molecule (using substructure searches).</p>
 </div>
 </div>
 
@@ -155,7 +171,9 @@ molecules.</p>
 <li class="toctree-l2"><a class="reference internal" href="#scaffold-modification">Scaffold modification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#custom-db-input-format">Custom DB input format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fingerprint-screening">Fingerprint screening</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#maximum-common-substructure-ranking">Maximum Common Substructure Ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#combined-score-ranking">Combined score ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maximum-common-substructure-score">Maximum common substructure score</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#postsynthetic-modifications-score">Postsynthetic modifications score</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="preprocessed_database.html">Preprocessed Database</a></li>

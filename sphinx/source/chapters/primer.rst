@@ -3,6 +3,9 @@ Primer
 ######
 
 This is the help page of the `SeMPI 2.0 web server <http://sempi.pharmazie.uni-freiburg.de/index>`_.
+If you feel there is anything missing or we should include something at this help page please write a mail to:
+paul.zierep@pharmazie.uni-freiburg.de 
+
 
 Introduction
 ============

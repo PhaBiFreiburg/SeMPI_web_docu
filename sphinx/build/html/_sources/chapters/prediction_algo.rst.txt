@@ -47,6 +47,8 @@ The DataFrame is curated and modified in order to prepare the BGC module detecti
 
    Curation steps: (a) Block generation, (b) Domain reordering, (c) Domain overlap removal, (d) Domain duplication joining.
 
+.. _mod_detect:
+
 Module detection
 ================
 
